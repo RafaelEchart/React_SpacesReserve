@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
-import { actionCreator } from './store/task';
+import './assets/stylesheets/App.css';
+import { actionCreator } from './redux/task';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,10 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>
-          Hello React App -
-          {state}
-        </h1>
+        <h1>Hello React App -{state}</h1>
       </header>
     </div>
   );

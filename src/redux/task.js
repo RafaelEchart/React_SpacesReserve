@@ -8,7 +8,7 @@ export const actionCreator = () => ({ type: ACTION_TYPE, payload: 'Payload' });
 const initialState = 'Initial State';
 
 // reducers
-export const reducer = (state = initialState, action) => {
+export const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPE:
       return [...state];
