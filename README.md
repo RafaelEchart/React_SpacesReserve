@@ -1,52 +1,69 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
-
-> Description the project.
-
+# Book an Appointment (Frontend)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- HTML, CSS
+- React
+- Redux
+- Ant Design, React Routers, Axios
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+> To get a local copy up and running follow these simple example steps.
 
+Copy
 
-To get a local copy up and running follow these simple example steps.
+```
+git@github.com:Hope1226/book-appointment-front-end.git
+```
 
-### Prerequisites
+Go to your terminal and paste the following command
 
-### Setup
+```
+git clone git@github.com:Hope1226/book-appointment-front-end.git
+```
 
-### Install
+Go to project folder
 
-### Usage
+```
+cd book-appointment-front-end
+```
 
-### Run tests
+Run the project
 
-### Deployment
-
-
+```
+npm start
+```
 
 ## Authors
 
-👤 **Author1**
+👤 **Leo**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
+👤 **Zain**
+
+- GitHub: [@githubhandle](https://github.com/zainsadaqat)
+- Twitter: [@twitterhandle](https://twitter.com/zain_sadaqat)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/zain-sadaqat)
+
+👤 **Hope**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Josh**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Rafael**
 
 - GitHub: [@githubhandle](https://github.com/githubhandle)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
@@ -64,9 +81,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- the design provided by Murat Korkmaz on Behance
 
 ## 📝 License
 

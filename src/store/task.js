@@ -8,11 +8,10 @@ export const actionCreator = () => ({ type: ACTION_TYPE, payload: 'Payload' });
 const initialState = 'Initial State';
 
 // reducers
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPE:
       return [...state];
+    default:
   }
 };
-
-export default reducer;
