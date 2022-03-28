@@ -5,7 +5,7 @@ import './style.css';
 const DrawerMenu = () => {
   const [visible, setVisible] = useState(false);
 
-  const showMenu = () => {
+  const openMenu = () => {
     setVisible(true);
   };
 
@@ -15,9 +15,11 @@ const DrawerMenu = () => {
 
   return (
     <>
-      <button type="button" onClick={showMenu} className="">
-        Open
+      <button type="button" onClick={openMenu} id="hamburger-menu" className="hamburger-menu">
+        <>
+        </ >
       </button>
+
       <Drawer
         title="Basic Drawer"
         placement="left"

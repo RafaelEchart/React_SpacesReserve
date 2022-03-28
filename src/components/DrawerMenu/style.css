@@ -2,6 +2,14 @@
     width: 200px !important;
 }
 
-.open_button {
-    
+
+.hamburger-menu {
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    display: block;
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    background: linear-gradient( to bottom, black, black 20%, white 20%, white 40%, black 40%, black 60%, white 60%, white 80%, black 80%, black 100% );
 }
