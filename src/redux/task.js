@@ -5,13 +5,14 @@ const ACTION_TYPE = 'ProjectName/ReducerName/ActionType';
 export const actionCreator = () => ({ type: ACTION_TYPE, payload: 'Payload' });
 
 // initial state
-const initialState = 'Initial State';
+const initialState = false;
 
 // reducers
 export const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPE:
-      return [...state];
+      return state;
     default:
+      return state;
   }
 };
