@@ -1,9 +1,10 @@
 import React from 'react';
 
-import './homePage.css';
+import './style.css';
+import DrawerMenu from '../DrawerMenu';
 
 const HomePage = () => (
-  <h1>hello</h1>
+  <DrawerMenu />
 );
 
 export default HomePage;
