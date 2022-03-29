@@ -30,7 +30,7 @@ const DrawerMenu = () => {
         visible={visible}
         key="left"
       >
-        <MenuContent />
+        <MenuContent closeMenu={closeMenu} />
       </Drawer>
     </>
   );

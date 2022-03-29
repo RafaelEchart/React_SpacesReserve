@@ -1,24 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import './style.css';
 
-const MenuContent = () => (
+const MenuContent = ({ closeMenu }) => (
+
   <>
     <nav className="nav_container">
 
       <ul className="ul_menu_container">
         <li key="/">
-          <Link to="/">Spaces</Link>
+          <NavLink to="/" onClick={closeMenu}>Spaces</NavLink>
         </li>
         <li key="/Login">
-          <Link to="/calculator">Log In</Link>
+          <NavLink to="/login" onClick={closeMenu}>Log In</NavLink>
         </li>
         <li key="/signup">
-          <Link to="/quote">Sign Up</Link>
+          <NavLink to="/signup" onClick={closeMenu}>Sign Up</NavLink>
         </li>
 
       </ul>
     </nav>
   </>
 );
+
+MenuContent.propTypes = {
+  closeMenu: PropTypes.func.isRequired,
+};
 export default MenuContent;
