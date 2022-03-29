@@ -10,15 +10,9 @@ const MenuContent = ({ closeMenu }) => (
     <nav className="nav_container">
 
       <ul className="ul_menu_container">
-        <li key="/">
-          <NavLink to="/" onClick={closeMenu}>Spaces</NavLink>
-        </li>
-        <li key="/Login">
-          <NavLink to="/login" onClick={closeMenu}>Log In</NavLink>
-        </li>
-        <li key="/signup">
-          <NavLink to="/signup" onClick={closeMenu}>Sign Up</NavLink>
-        </li>
+        <NavLink to="/" className="menu-options" onClick={closeMenu}>Spaces</NavLink>
+        <NavLink to="/login" className="menu-options" onClick={closeMenu}>Log In</NavLink>
+        <NavLink to="/signup" className="menu-options" onClick={closeMenu}>Sign Up</NavLink>
 
       </ul>
     </nav>

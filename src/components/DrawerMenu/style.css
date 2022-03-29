@@ -29,25 +29,29 @@
     list-style-type: none;
     width: 100%;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.ul_menu_container li{
+.menu-options {
     height: 40px;
     text-align: left;
     padding-left: 15px;
     margin-left: 15px;
-    padding-top: 4px;
-}
-
-.ul_menu_container li a{
+    padding-top: 6px;
     vertical-align: -webkit-baseline-middle;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Montreal-font', sans-serif;
     color: black;
     font-weight: 600;
 }
 
+.menu-options:hover {
+    color: inherit
+}
+
+
 .active {
-    color: orangered;
-    text-decoration: underline;
+    color: white;
+    background-color: #97bf0f;
   }
