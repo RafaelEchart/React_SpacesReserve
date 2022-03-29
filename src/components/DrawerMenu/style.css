@@ -2,6 +2,10 @@
     width: 200px !important;
 }
 
+.ant-drawer-body {
+    padding: 30px 0px 0px 0px !important;
+}
+
 
 .hamburger-menu {
     cursor: pointer;
@@ -13,3 +17,37 @@
     margin: 20px;
     background: linear-gradient( to bottom, black, black 20%, white 20%, white 40%, black 40%, black 60%, white 60%, white 80%, black 80%, black 100% );
 }
+
+.title-logo {
+    width: 100%;
+}
+
+
+/*Menu options style*/
+
+.ul_menu_container {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+.ul_menu_container li{
+    height: 40px;
+    text-align: left;
+    padding-left: 15px;
+    margin-left: 15px;
+    padding-top: 4px;
+}
+
+.ul_menu_container li a{
+    vertical-align: -webkit-baseline-middle;
+    font-size: 20px;
+    font-family: 'Montreal-font', sans-serif;
+    color: black;
+    font-weight: 600;
+}
+
+.active-link {
+    color: orangered;
+    text-decoration: underline;
+  }

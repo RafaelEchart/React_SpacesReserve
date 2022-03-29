@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Drawer } from 'antd';
+import MenuContent from './MenuContent';
+import TitleLogo from '../../assets/images/title-logo.png';
 import './style.css';
 
 const DrawerMenu = () => {
@@ -21,16 +23,14 @@ const DrawerMenu = () => {
       </button>
 
       <Drawer
-        title="Basic Drawer"
+        title={<img alt="Title Logo" src={TitleLogo} className="title-logo" />}
         placement="left"
         closable={false}
         onClose={closeMenu}
         visible={visible}
         key="left"
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <MenuContent />
       </Drawer>
     </>
   );
