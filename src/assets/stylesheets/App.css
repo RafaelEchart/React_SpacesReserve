@@ -43,6 +43,7 @@
 
 @font-face {
   font-family: 'Montreal-font';
-  src: url('../fonts/Montreal-regular.woff') format('woff'), 
-   url('../fonts/Montreal-regular.ttf') format('truetype'); 
-}  
+  src:
+    url('../fonts/Montreal-regular.woff') format('woff'),
+    url('../fonts/Montreal-regular.ttf') format('truetype');
+}
