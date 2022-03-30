@@ -8,6 +8,7 @@ import {
 import './assets/stylesheets/App.css';
 import { actionCreator } from './redux/task';
 import HomePage from './components/HomePage_NoLogin';
+import LoginPage from './components/LoginPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<HomePage />} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
