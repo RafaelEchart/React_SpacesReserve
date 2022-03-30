@@ -11,7 +11,7 @@ const FirstBannerMainPage = () => (
         <h2>FIND YOUR FLEXIBLE WORKSPACE</h2>
         <button className="button-29 see_spaces_button" type="button">
           See Spaces
-          <ion-icon name="caret-forward-circle-outline" />
+          <ion-icon name="caret-forward-circle-outline" class="see_spaces_icon" />
         </button>
       </div>
     </div>

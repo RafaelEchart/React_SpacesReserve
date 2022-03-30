@@ -19,7 +19,7 @@ const SecondBannerMainPage = () => (
             <div className="second_banner_button_container">
               <button className="button-17 sign_up_button" type="button">
                 <span>SIGN IN</span>
-                <ion-icon name="cloud-done-outline" />
+                <ion-icon name="cloud-done-outline" class="sign_up_icon" />
               </button>
               <button className="button-17 log_in_button" type="button">
                 SIGN UP

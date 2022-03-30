@@ -54,10 +54,6 @@
   background-color: #97bf0f;
 }
 
-.slick-list {
-  height: 100vh;
-}
-
 .ant-carousel {
   box-sizing: border-box;
   margin: 0;
@@ -68,8 +64,6 @@
   line-height: 1.5715;
   list-style: none;
   font-feature-settings: 'tnum', "tnum";
-
-  /* height: 65vh !important; */
 }
 
 .ant-carousel .slick-slider {
@@ -83,13 +77,4 @@
 
 .slick-list {
   height: 100vh !important;
-}
-
-.ant-carousel .slick-slider .slick-track,
-.ant-carousel .slick-slider .slick-list {
-  touch-action: pan-x !important;
-}
-
-.ant-carousel .slick-slider {
-  touch-action: pan-x !important;
 }

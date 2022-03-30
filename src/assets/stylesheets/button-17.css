@@ -50,7 +50,6 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0, rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
 
-
 .log_in_button:not(:disabled):hover {
   box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0, rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
 }
@@ -63,7 +62,6 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0, rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
 }
 
-
 .sign_up_button {
   background-color: transparent;
   border: 1px solid white;
@@ -74,8 +72,6 @@
   margin-right: 10px;
 }
 
-.sign_up_button ion-icon {
+.sign_up_icon {
   font-size: 20px;
 }
-
-
