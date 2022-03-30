@@ -40,38 +40,48 @@
 }
 
 .second_banner_title {
-    font-family: "Montreal-font", sans-serif;
-    letter-spacing: 10px;
-    font-size: 18px;
-    font-weight: bolder;
-    color: white;
-    line-height: 45px;
-    margin: 0px 24%;
+  font-family: "Montreal-font", sans-serif;
+  letter-spacing: 10px;
+  font-size: 18px;
+  font-weight: bolder;
+  color: white;
+  line-height: 45px;
+  margin: 0 24%;
 }
 
 .second_banner_info {
-    display: flex;
-    max-width: 530px;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  max-width: 530px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .second_banner_line_style {
-    width: 90%;
+  width: 90%;
 }
 
-.second_banner_text { 
-    line-height: 20px;
-    width: 90%;
-    color: white;
+.second_banner_text {
+  line-height: 20px;
+  width: 90%;
+  color: white;
 }
+
+.second_banner_button_container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  margin: 30px;
+  align-items: center;
+}
+
 
 /* Image and text media queries */
 
 @media only screen and (min-width: 385px) {
-    .second_banner_title {
-        margin: 0px 28%;
-    }
+  .second_banner_title {
+    margin: 0 28%;
+  }
 }
 
 @media only screen and (min-width: 410px) {
@@ -81,9 +91,8 @@
   }
 
   .second_banner_title {
-    margin: 0px 20%;
-}
-
+    margin: 0 20%;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -93,9 +102,9 @@
 }
 
 @media only screen and (min-width: 680px) {
-    .second_banner_text {
-       width: 120%
-    }
+  .second_banner_text {
+    width: 120%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -108,6 +117,6 @@
   }
 
   .second_banner_title {
-    margin: 0px 0%;
-}
+    margin: 0 0%;
+  }
 }
