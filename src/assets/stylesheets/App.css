@@ -41,8 +41,24 @@
 /* Fonts for project */
 
 @font-face {
-  font-family: 'Montreal-font';
+  font-family: "Montreal-font";
   src:
-    url('../fonts/Montreal-regular.woff') format('woff'),
-    url('../fonts/Montreal-regular.ttf') format('truetype');
+    url("../fonts/Montreal-regular.woff") format("woff"),
+    url("../fonts/Montreal-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Orev Light";
+  src: url("//db.onlinewebfonts.com/t/20c788a1fca9df5e58734495a1ecf80b.eot");
+  src:
+    url("//db.onlinewebfonts.com/t/20c788a1fca9df5e58734495a1ecf80b.eot?#iefix")
+    format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/20c788a1fca9df5e58734495a1ecf80b.woff2")
+    format("woff2"),
+    url("//db.onlinewebfonts.com/t/20c788a1fca9df5e58734495a1ecf80b.woff")
+    format("woff"),
+    url("//db.onlinewebfonts.com/t/20c788a1fca9df5e58734495a1ecf80b.ttf")
+    format("truetype"),
+    url("//db.onlinewebfonts.com/t/20c788a1fca9df5e58734495a1ecf80b.svg#Orev Light")
+    format("svg");
 }

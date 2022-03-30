@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import './assets/stylesheets/App.css';
 import { actionCreator } from './redux/task';
-import HomePage from './components/HomePage';
+import HomePage from './components/HomePage_NoLogin';
 
 function App() {
   const dispatch = useDispatch();
