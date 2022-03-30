@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { userIsLogged } from '../../redux/task';
 
@@ -7,6 +8,7 @@ import './style.css';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({ email: '', password: '' });
 
@@ -46,6 +48,7 @@ const LoginForm = () => {
         const token = backendResponse.headers.get('Authorization');
         dispatch(userIsLogged(token, backendResponseData.data));
         message.success(`Welcome back, ${backendResponseData.data.name}!`);
+        navigate('/');
       } catch (err) {
         message.error(err);
       }

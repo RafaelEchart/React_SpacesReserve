@@ -4,7 +4,7 @@ import './style.css';
 import DrawerMenu from '../DrawerMenu';
 import MainSlideShow from '../MainSlideShow';
 
-const HomePage = () => (
+const HomePageNoSession = () => (
   <>
     <DrawerMenu />
     <MainSlideShow />
@@ -12,4 +12,4 @@ const HomePage = () => (
   </>
 );
 
-export default HomePage;
+export default HomePageNoSession;

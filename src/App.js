@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Routes,
   Route,
@@ -7,11 +7,13 @@ import {
 } from 'react-router-dom';
 import './assets/stylesheets/App.css';
 import { checkUserData } from './redux/task';
-import HomePage from './components/HomePage_NoLogin';
+import HomePageNoSession from './components/HomePageNoSession';
+import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
 
 function App() {
   const dispatch = useDispatch();
+  const { userInformation } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(checkUserData());
@@ -20,10 +22,23 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<HomePage />} />
+        {!userInformation
+        && (
+        <>
+          <Route path="/" element={<HomePageNoSession />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<LoginPage />} />
+        </>
+        )}
+        {userInformation
+        && (
+        <>
+          <Route path="/" element={<HomePageWithSession />} />
+        </>
+        )}
+
         <Route path="/*" element={<Navigate to="/" />} />
+
       </Routes>
     </div>
   );
