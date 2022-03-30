@@ -20,12 +20,32 @@ const LoginForm = () => {
     }
   };
 
-  const submitLogin = () => {
-    // if (loginData.email.length && loginData.password.length) {
+  const submitLogin = async () => {
+    if (loginData.email.length && loginData.password.length) {
+      try {
+        const backendResponse = await fetch('http://localhost:3000/login', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            user: {
+              email: loginData.email,
+              password: loginData.password,
+            },
+          }),
+        });
+        const backendResponseData = await backendResponse.json();
 
-    // } else {
+        const token = backendResponse.headers.get('Authorization');
 
-    // }
+        console.log(backendResponseData, token);
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      console.log('inputs must not be empty');
+    }
   };
 
   return (
