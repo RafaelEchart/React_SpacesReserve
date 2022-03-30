@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { message } from 'antd';
+import { userIsLogged } from '../../redux/task';
+
 import './style.css';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+
   const [loginData, setLoginData] = useState({ email: '', password: '' });
 
   const formDataHandler = (e, field) => {
@@ -38,13 +44,13 @@ const LoginForm = () => {
         const backendResponseData = await backendResponse.json();
 
         const token = backendResponse.headers.get('Authorization');
-
-        console.log(backendResponseData, token);
+        dispatch(userIsLogged(token, backendResponseData.data));
+        message.success(`Welcome back, ${backendResponseData.data.name}!`);
       } catch (err) {
-        console.log(err);
+        message.error(err);
       }
     } else {
-      console.log('inputs must not be empty');
+      message.warning('The inputs cannot we blank!');
     }
   };
 

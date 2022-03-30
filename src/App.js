@@ -6,7 +6,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import './assets/stylesheets/App.css';
-import { actionCreator } from './redux/task';
+import { checkUserData } from './redux/task';
 import HomePage from './components/HomePage_NoLogin';
 import LoginPage from './components/LoginPage';
 
@@ -14,7 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(actionCreator());
+    dispatch(checkUserData());
   }, []);
 
   return (
