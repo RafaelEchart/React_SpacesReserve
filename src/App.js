@@ -10,6 +10,7 @@ import { checkUserData } from './redux/task';
 import HomePageNoSession from './components/HomePageNoSession';
 import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function App() {
         <>
           <Route path="/" element={<HomePageNoSession />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
         </>
         )}
         {userInformation
