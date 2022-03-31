@@ -19,7 +19,6 @@ function App() {
 
   useEffect(() => {
     dispatch(checkUserData());
-    console.log(userInformation);
   }, []);
 
   return (
