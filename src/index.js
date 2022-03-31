@@ -5,7 +5,7 @@ import './assets/stylesheets/index.css';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/configureStore';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 
 ReactDOM.render(
   <Provider store={store}>

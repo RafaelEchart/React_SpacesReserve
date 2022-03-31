@@ -1,0 +1,30 @@
+.spaces-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 10em;
+}
+
+.rec.rec-arrow {
+  background-color: green;
+  border-radius: 0;
+  color: #fff;
+}
+
+.rec.rec-arrow:focus {
+  background-color: green;
+  color: #fff;
+}
+
+.rec.rec-arrow:hover {
+  border-radius: 50%;
+}
+
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: 10px 10px 10px #888;
+}

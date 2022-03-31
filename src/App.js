@@ -11,6 +11,7 @@ import HomePageNoSession from './components/HomePageNoSession';
 import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import Details from './components/Spaces/Details';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,11 +36,11 @@ function App() {
         && (
         <>
           <Route path="/" element={<HomePageWithSession />} />
+          <Route path="/details" element={<Details />} />
         </>
         )}
 
         <Route path="/*" element={<Navigate to="/" />} />
-
       </Routes>
     </div>
   );
