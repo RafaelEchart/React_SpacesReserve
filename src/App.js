@@ -1,30 +1,45 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Routes,
   Route,
   Navigate,
 } from 'react-router-dom';
 import './assets/stylesheets/App.css';
-import { actionCreator } from './redux/task';
-import HomePage from './components/HomePage';
-import Spaces from './components/Spaces';
+import { checkUserData } from './redux/task';
+import HomePageNoSession from './components/HomePageNoSession';
+import HomePageWithSession from './components/HomePageWithSession';
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
 
 function App() {
   const dispatch = useDispatch();
+  const { userInformation } = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch(actionCreator());
+    dispatch(checkUserData());
   }, []);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<HomePage />} />
-        <Route path="/signup" element={<HomePage />} />
-        <Route path="/spaces" element={<Spaces />} />
+        {!userInformation
+        && (
+        <>
+          <Route path="/" element={<HomePageNoSession />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </>
+        )}
+        {userInformation
+        && (
+        <>
+          <Route path="/" element={<HomePageWithSession />} />
+        </>
+        )}
+
         <Route path="/*" element={<Navigate to="/" />} />
+
       </Routes>
     </div>
   );
