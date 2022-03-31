@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { userIsLogged } from '../../redux/task';
-
+import '../LoginForm/style.css';
 import './style.css';
 
 const SignupForm = () => {
@@ -79,7 +79,6 @@ const SignupForm = () => {
     <>
       <div className="login_container">
         <div className="session">
-          <div className="left" />
           <div action="" className="log-in" autoComplete="off">
             <h4 className="login_title">
               Welcome to
@@ -87,35 +86,37 @@ const SignupForm = () => {
             </h4>
             <p className="login_p">Find productive workspace for your needs, whether it&#39;s a single desk, a meeting room, or a private office.</p>
             <div className="floating-label">
-              <input placeholder="Name" className="login_input" type="text" name="name" onChange={(e) => formDataHandler(e, 'name')} id="name" autoComplete="off" />
-              <div className="icon">
+              <input placeholder="Name" className="signup_input" type="text" name="name" onChange={(e) => formDataHandler(e, 'name')} id="name" autoComplete="off" />
+              <div className="icon new_heigh_icon">
                 <ion-icon name="mail-outline" class="email_icon" />
 
               </div>
             </div>
             <div className="floating-label">
-              <input placeholder="Email" className="login_input" type="email" name="email" onChange={(e) => formDataHandler(e, 'email')} id="email" autoComplete="off" />
-              <div className="icon">
+              <input placeholder="Email" className="signup_input" type="email" name="email" onChange={(e) => formDataHandler(e, 'email')} id="email" autoComplete="off" />
+              <div className="icon new_heigh_icon">
                 <ion-icon name="mail-outline" class="email_icon" />
 
               </div>
             </div>
             <div className="floating-label">
-              <input placeholder="Password" className="login_input" type="password" name="password" onChange={(e) => formDataHandler(e, 'password')} id="password" autoComplete="off" />
-              <div className="icon">
+              <input placeholder="Password" className="signup_input" type="password" name="password" onChange={(e) => formDataHandler(e, 'password')} id="password" autoComplete="off" />
+              <div className="icon new_heigh_icon">
                 <ion-icon name="key-outline" class="email_icon" />
               </div>
 
             </div>
             <div className="floating-label">
-              <input placeholder="Repeat password" className="login_input" type="password" name="password_confirmation" onChange={(e) => formDataHandler(e, 'password_confirmation')} id="password_confirmation" autoComplete="off" />
-              <div className="icon">
+              <input placeholder="Repeat password" className="signup_input" type="password" name="password_confirmation" onChange={(e) => formDataHandler(e, 'password_confirmation')} id="password_confirmation" autoComplete="off" />
+              <div className="icon new_heigh_icon">
                 <ion-icon name="key-outline" class="email_icon" />
               </div>
 
             </div>
             <button type="submit" onClick={submitLogin} className="login_button">Log in</button>
           </div>
+          <div className="right" />
+
         </div>
       </div>
     </>
