@@ -44,7 +44,7 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
               {userAdmin
                 ? (
                   <>
-                    <NavLink to="/addspaces" className="menu-options" onClick={closeMenu}>Add space</NavLink>
+                    <NavLink to="/new_space" className="menu-options" onClick={closeMenu}>Add spaces</NavLink>
                     <NavLink to="/spaces" className="menu-options" onClick={closeMenu}>Delete spaces</NavLink>
                   </>
                 )

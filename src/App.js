@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import SpaceForm from './components/Spaces/form';
 import DrawerMenu from './components/DrawerMenu';
 import './assets/stylesheets/App.css';
 import { checkUserData } from './redux/task';
@@ -40,6 +41,7 @@ function App() {
         && (
         <>
           <Route path="/" element={<HomePageWithSession />} />
+          <Route path="/new_space" element={<SpaceForm />} />
           <Route path="/login" element={<LoginPage />} />
         </>
         )}
