@@ -27,6 +27,7 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
       message.success(backMessage);
       localStorage.removeItem('userInformation');
       navigate('/login');
+      closeMenu();
     } catch (err) {
       message.error(err);
     }
@@ -43,12 +44,12 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
               {userAdmin
                 ? (
                   <>
-                    <NavLink to="/" className="menu-options" onClick={closeMenu}>Add space</NavLink>
-                    <NavLink to="/" className="menu-options" onClick={closeMenu}>Delete spaces</NavLink>
+                    <NavLink to="/addspaces" className="menu-options" onClick={closeMenu}>Add space</NavLink>
+                    <NavLink to="/spaces" className="menu-options" onClick={closeMenu}>Delete spaces</NavLink>
                   </>
                 )
                 : null }
-              <button type="button" className="menu-options" onClick={handleLogout}>Log out</button>
+              <NavLink to="/login" className="menu-options" onClick={handleLogout}>Log out</NavLink>
             </ul>
           )
           : (

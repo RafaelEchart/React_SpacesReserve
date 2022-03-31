@@ -40,6 +40,7 @@ function App() {
         && (
         <>
           <Route path="/" element={<HomePageWithSession />} />
+          <Route path="/login" element={<LoginPage />} />
         </>
         )}
 
