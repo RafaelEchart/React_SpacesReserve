@@ -11,7 +11,7 @@ const SpaceCard = ({
     className="space-card"
     cover={<img alt="Space" src={image} />}
     actions={[
-      <Link key="link" to="/details">View Space</Link>,
+      <Link className="view-btn" key="link" to="/details">View Space</Link>,
     ]}
   >
     <Card.Meta title={name} description={description} />
