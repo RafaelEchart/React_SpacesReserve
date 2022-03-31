@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import DrawerMenu from './components/DrawerMenu';
 import './assets/stylesheets/App.css';
 import { checkUserData } from './redux/task';
 import HomePageNoSession from './components/HomePageNoSession';
@@ -18,10 +19,15 @@ function App() {
 
   useEffect(() => {
     dispatch(checkUserData());
+    console.log(userInformation);
   }, []);
 
   return (
     <div className="App">
+      <DrawerMenu
+        logedIn={userInformation}
+        admin={userInformation.role === 'admin'}
+      />
       <Routes>
         {!userInformation
         && (
