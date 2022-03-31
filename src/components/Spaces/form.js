@@ -1,4 +1,6 @@
+/* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
+import { message } from 'antd';
 
 const Form = () => {
   const [spaceData, setSpaceData] = useState({
@@ -32,8 +34,36 @@ const Form = () => {
     }
   };
 
-  const handleSubmisson = () => {
-    console.log(spaceData);
+  const resetInputs = () => {
+    const fields = document.querySelectorAll('.login_input');
+    fields.forEach((field) => {
+      field.value = '';
+    });
+  };
+
+  const handleSubmisson = async () => {
+    const { token } = JSON.parse(localStorage.getItem('userInformation'));
+    try {
+      fetch('http://localhost:3000/spaces', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token,
+        },
+        body: JSON.stringify({
+          space: {
+            name: spaceData.name,
+            description: spaceData.description,
+            price: spaceData.price,
+            image: spaceData.image,
+          },
+        }),
+      });
+      message.success('New space added successfully');
+      resetInputs();
+    } catch (error) {
+      message.error(error);
+    }
   };
 
   return (
