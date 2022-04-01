@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './style.css';
+import Spaces from '../Spaces/Spaces';
 
 const HomePageWithSession = () => (
-  <>
-    Home page with session
-
-  </>
+  <div className="spaces-page">
+    <Spaces />
+  </div>
 );
 
 export default HomePageWithSession;

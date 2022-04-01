@@ -1,1 +1,7 @@
 /**   */
+.spaces-page {
+  background-image: url("../../assets/images/MainPage_NoLogin/secondImage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
