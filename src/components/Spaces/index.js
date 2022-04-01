@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
 import Space from './space';
+import './style.css';
 
 const Spaces = () => {
   const [spaces, setSpaces] = useState([]);
@@ -17,16 +18,15 @@ const Spaces = () => {
   }, []);
 
   return (
-    <>
+    <div className="spaces">
       <h2>Space managment</h2>
       <div className="spaces-container">
         {spaces.map((target) => (
           <Space space={target} key={uniqid()} />
         ))}
-        ;
       </div>
 
-    </>
+    </div>
   );
 };
 
