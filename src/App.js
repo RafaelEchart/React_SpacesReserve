@@ -18,6 +18,7 @@ import Spaces from './components/Spaces';
 function App() {
   const dispatch = useDispatch();
   const { userInformation } = useSelector((state) => state);
+  const admin = userInformation.role === 'admin';
 
   useEffect(() => {
     dispatch(checkUserData());
@@ -27,13 +28,19 @@ function App() {
     <div className="App">
       <DrawerMenu
         logedIn={userInformation}
-        admin={userInformation.role === 'admin'}
+        admin={admin}
       />
       <Routes>
         <>
           <Route path="/" element={userInformation ? <HomePageWithSession /> : <HomePageNoSession />} />
-          <Route path="/new_space" element={<SpaceForm />} />
-          <Route path="/spaces" element={<Spaces />} />
+          {admin
+            ? (
+              <>
+                <Route path="/new_space" element={<SpaceForm />} />
+                <Route path="/spaces" element={<Spaces />} />
+              </>
+            )
+            : null}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/*" element={<Navigate to="/" />} />
