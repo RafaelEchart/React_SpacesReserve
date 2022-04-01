@@ -32,6 +32,7 @@ const Spaces = () => {
             : spaces.map((space) => (
               <SpaceCard
                 key={space.id}
+                id={space.id}
                 name={space.name}
                 description={space.description}
                 price={space.price}

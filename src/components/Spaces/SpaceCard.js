@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card, Button } from 'antd';
+import { Link } from 'react-router-dom';
+import { Card } from 'antd';
 import PropTypes from 'prop-types';
 
 const SpaceCard = ({
-  name, image, description, price,
+  id, name, image, description, price,
 }) => (
   <Card
     hoverable
     className="space-card"
     cover={<img alt="Space" src={image} />}
     actions={[
-      <Button type="primary" key="link">View Space</Button>,
+      <Link key="link" to={`space/${id}`}> View</Link>,
     ]}
   >
     <Card.Meta title={name} description={description} />
@@ -21,6 +22,7 @@ const SpaceCard = ({
 );
 
 SpaceCard.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

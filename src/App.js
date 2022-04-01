@@ -36,7 +36,7 @@ function App() {
         && (
         <>
           <Route path="/" element={<HomePageWithSession />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/space/:id" element={<Details />} />
         </>
         )}
 

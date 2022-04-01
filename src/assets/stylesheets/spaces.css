@@ -4,6 +4,11 @@
   padding: 20px;
 }
 
+.space-card {
+  width: 400px;
+  
+}
+
 .rec.rec-arrow {
   background-color: green;
   border-radius: 0;
@@ -26,4 +31,17 @@
 .rec-carousel-item:focus {
   outline: none;
   box-shadow: 10px 10px 10px #888;
+}
+
+.ant-card-actions li span {
+  width: 50%;
+}
+
+.ant-card-actions li span a {
+  border: 1px solid #000;
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-left: 45%;
 }

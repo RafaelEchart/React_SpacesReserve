@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { userInformation } from './task';
-import spacesReducer from './reducers/spaces';
+import spacesReducer from './spaces';
 
 const reducers = combineReducers({ userInformation, spacesReducer });
 
