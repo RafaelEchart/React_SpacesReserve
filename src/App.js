@@ -13,8 +13,7 @@ import HomePageNoSession from './components/HomePageNoSession';
 import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
-import Details from './components/Spaces/Details';
-import Spaces from './components/Spaces';
+import Spaces from './components/Spaces/index';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,16 +45,6 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </>
-        )}
-        {userInformation
-        && (
-        <>
-          <Route path="/" element={<HomePageWithSession />} />
-          <Route path="/space/:id" element={<Details />} />
-        </>
-        )}
-
-        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
