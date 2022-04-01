@@ -1,5 +1,6 @@
 // action types
 const LOAD_DATA = 'ProjectName/ReducerName/ActionType';
+const RESET_DATA = 'ProjectName/ReducerName/RESET_DATA';
 
 // initial state
 const initialState = false;
@@ -9,6 +10,14 @@ export const loadData = (data) => ({
   type: LOAD_DATA,
   payload: data,
 });
+
+const resetUser = () => ({
+  type: RESET_DATA,
+});
+
+export const logOut = () => async (dispatch) => {
+  dispatch(resetUser);
+};
 
 export const userIsLogged = (token, userData) => async (dispatch) => {
   const data = {
@@ -37,7 +46,8 @@ export const userInformation = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_DATA:
       return action.payload;
-
+    case RESET_DATA:
+      return state;
     default:
       return state;
   }
