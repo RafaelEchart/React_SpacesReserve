@@ -70,59 +70,49 @@ const Form = () => {
     <>
       <div className="login_container">
         <div className="session">
-          <div className="left" />
-          <div action="" className="log-in" autoComplete="off">
+          <div action="" className="log-in add-space" autoComplete="off">
             <h4 className="login_title">
               Add new Space
             </h4>
 
-            <div className="floating-label">
-              <input
-                placeholder="Space Name"
-                className="login_input"
-                type="text"
-                name="spaceName"
-                onChange={(e) => handleInput(e, 'name')}
-                id="name"
-                autoComplete="off"
-              />
-            </div>
+            <input
+              placeholder="Space Name"
+              className="login_input space_input"
+              type="text"
+              name="spaceName"
+              onChange={(e) => handleInput(e, 'name')}
+              id="name"
+              autoComplete="off"
+            />
 
-            <div className="floating-label">
-              <textarea
-                placeholder="Description"
-                className="login_input sp_textarea"
-                name="Description"
-                onChange={(e) => handleInput(e, 'description')}
-                id="description"
-                autoComplete="off"
-              />
-            </div>
+            <input
+              placeholder="Price"
+              className="login_input space_input"
+              type="number"
+              name="spacePrice"
+              onChange={(e) => handleInput(e, 'price')}
+              id="spacePrice"
+              autoComplete="off"
+            />
 
-            <div className="floating-label">
-              <input
-                placeholder="Price"
-                className="login_input"
-                type="number"
-                name="spacePrice"
-                onChange={(e) => handleInput(e, 'price')}
-                id="spacePrice"
-                autoComplete="off"
-              />
-            </div>
+            <input
+              placeholder="Image URL"
+              className="login_input space_input"
+              type="text"
+              name="spaceImage"
+              onChange={(e) => handleInput(e, 'image')}
+              id="spaceImage"
+              autoComplete="off"
+            />
 
-            <div className="floating-label">
-              <input
-                placeholder="Image URL"
-                className="login_input"
-                type="text"
-                name="spaceImage"
-                onChange={(e) => handleInput(e, 'image')}
-                id="spaceImage"
-                autoComplete="off"
-              />
-            </div>
-
+            <textarea
+              placeholder="Description"
+              className="login_input space_input sp_textarea"
+              name="Description"
+              onChange={(e) => handleInput(e, 'description')}
+              id="description"
+              autoComplete="off"
+            />
             <button type="submit" onClick={handleSubmisson} className="login_button">Add Space</button>
           </div>
         </div>

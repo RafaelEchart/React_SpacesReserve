@@ -165,6 +165,25 @@
   font-size: 23px;
 }
 
+.add-space {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto, 1fr 1fr 1fr auto;
+  grid-gap: 10px;
+}
+
+.sp_textarea {
+  height: 200px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  padding: 10px;
+} 
+
+.sp_textarea:focus {
+  border-color: #b69de6 ;
+}
+
 @media only screen and (min-width: 560px) {
   .left {
     display: block;
@@ -173,4 +192,14 @@
   .login_button {
     margin-left: auto;
   }
+
+  .add-space {
+    width: 800px;
+  }
+
+ .space_input {
+    margin: 0;
+    width: auto;
+  }
+
 }
