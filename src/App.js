@@ -5,16 +5,20 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
+import SpaceForm from './components/Spaces/form';
+import DrawerMenu from './components/DrawerMenu';
 import './assets/stylesheets/App.css';
 import { checkUserData } from './redux/task';
 import HomePageNoSession from './components/HomePageNoSession';
 import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import Spaces from './components/Spaces';
 
 function App() {
   const dispatch = useDispatch();
   const { userInformation } = useSelector((state) => state);
+  const admin = userInformation.role === 'admin';
 
   useEffect(() => {
     dispatch(checkUserData());
@@ -22,24 +26,25 @@ function App() {
 
   return (
     <div className="App">
+      <DrawerMenu
+        logedIn={userInformation}
+        admin={admin}
+      />
       <Routes>
-        {!userInformation
-        && (
         <>
-          <Route path="/" element={<HomePageNoSession />} />
+          <Route path="/" element={userInformation ? <HomePageWithSession /> : <HomePageNoSession />} />
+          {admin
+            ? (
+              <>
+                <Route path="/new_space" element={<SpaceForm />} />
+                <Route path="/spaces" element={<Spaces />} />
+              </>
+            )
+            : null}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </>
-        )}
-        {userInformation
-        && (
-        <>
-          <Route path="/" element={<HomePageWithSession />} />
-        </>
-        )}
-
-        <Route path="/*" element={<Navigate to="/" />} />
-
       </Routes>
     </div>
   );

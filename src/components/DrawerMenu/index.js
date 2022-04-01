@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Drawer } from 'antd';
+import PropTypes from 'prop-types';
 import MenuContent from './MenuContent';
 import TitleLogo from '../../assets/images/title-logo.png';
 import './style.css';
 
-const DrawerMenu = () => {
+const DrawerMenu = ({ logedIn, admin }) => {
   const [visible, setVisible] = useState(false);
 
   const openMenu = () => {
@@ -29,11 +30,21 @@ const DrawerMenu = () => {
         onClose={closeMenu}
         visible={visible}
         key="left"
+
       >
-        <MenuContent closeMenu={closeMenu} />
+        <MenuContent
+          closeMenu={closeMenu}
+          userLogedIn={logedIn}
+          userAdmin={admin}
+        />
       </Drawer>
     </>
   );
+};
+
+DrawerMenu.propTypes = {
+  logedIn: PropTypes.bool.isRequired,
+  admin: PropTypes.bool.isRequired,
 };
 
 export default DrawerMenu;
