@@ -29,25 +29,13 @@ function App() {
         admin={userInformation.role === 'admin'}
       />
       <Routes>
-        {!userInformation
-        && (
         <>
-          <Route path="/" element={<HomePageNoSession />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-        </>
-        )}
-        {userInformation
-        && (
-        <>
-          <Route path="/" element={<HomePageWithSession />} />
+          <Route path="/" element={userInformation ? <HomePageWithSession /> : <HomePageNoSession />} />
           <Route path="/new_space" element={<SpaceForm />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </>
-        )}
-
-        <Route path="/*" element={<Navigate to="/" />} />
-
       </Routes>
     </div>
   );
