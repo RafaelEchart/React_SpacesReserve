@@ -169,7 +169,7 @@
   width: 90%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto, 1fr 1fr 1fr auto;
+  grid-template-rows: auto;
   grid-gap: 10px;
 }
 
@@ -178,10 +178,10 @@
   border: 1px solid #dbdbdb;
   border-radius: 5px;
   padding: 10px;
-} 
+}
 
 .sp_textarea:focus {
-  border-color: #b69de6 ;
+  border-color: #b69de6;
 }
 
 @media only screen and (min-width: 560px) {
@@ -197,9 +197,8 @@
     width: 800px;
   }
 
- .space_input {
+  .space_input {
     margin: 0;
     width: auto;
   }
-
 }
