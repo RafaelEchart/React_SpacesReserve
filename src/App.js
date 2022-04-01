@@ -13,6 +13,7 @@ import HomePageNoSession from './components/HomePageNoSession';
 import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import Spaces from './components/Spaces';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function App() {
         <>
           <Route path="/" element={userInformation ? <HomePageWithSession /> : <HomePageNoSession />} />
           <Route path="/new_space" element={<SpaceForm />} />
+          <Route path="/spaces" element={<Spaces />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/*" element={<Navigate to="/" />} />
