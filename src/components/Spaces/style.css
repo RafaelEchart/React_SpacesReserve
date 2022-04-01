@@ -6,7 +6,7 @@
 
 .spaces-container {
   display: grid;
-  grid-column: 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
   padding: 20px 200px;

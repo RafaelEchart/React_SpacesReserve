@@ -169,7 +169,7 @@
   width: 90%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: autocd ;
+  grid-template-rows: auto;
   grid-gap: 10px;
 }
 
