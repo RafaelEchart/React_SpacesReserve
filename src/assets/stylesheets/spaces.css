@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   padding: 20px;
-  margin: 10em;
 }
 
 .rec.rec-arrow {
@@ -27,12 +26,4 @@
 .rec-carousel-item:focus {
   outline: none;
   box-shadow: 10px 10px 10px #888;
-}
-
-.view-btn {
-  background-color: green;
-  border: none;
-  text-decoration: none;
-  border-radius: 5px;
-  padding: 10px;
 }

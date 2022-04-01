@@ -8,8 +8,14 @@ const Spaces = () => {
   const [spaces, setSpaces] = useState([]);
   const fetchSpaces = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
-    const response = await axios.get('http://localhost:3000/spaces', { headers: { Authorization: token } });
-    setSpaces(response.data);
+    const res = await axios.get('http://localhost:3000/spaces', { headers: { Authorization: token } });
+    const response = res.data.map((space) => {
+      if (space.removed === false) {
+        return space;
+      }
+      return null;
+    });
+    setSpaces(response);
   };
 
   useEffect(() => {
@@ -17,19 +23,23 @@ const Spaces = () => {
   }, []);
 
   return (
-    <div className="spaces-container">
+    <div>
       <h1 className="spaces-title">Spaces</h1>
-      <Carousel itemsToShow={3} itemPadding={[5]}>
-        {spaces.map((space) => (
-          <SpaceCard
-            key={space.id}
-            name={space.name}
-            description={space.description}
-            price={space.price}
-            image={space.image}
-          />
-        ))}
-      </Carousel>
+      <div className="spaces-container">
+        <Carousel itemsToShow={3} itemPadding={[5]}>
+          {spaces.length === 0
+            ? <h1>No spaces available</h1>
+            : spaces.map((space) => (
+              <SpaceCard
+                key={space.id}
+                name={space.name}
+                description={space.description}
+                price={space.price}
+                image={space.image}
+              />
+            ))}
+        </Carousel>
+      </div>
     </div>
   );
 };

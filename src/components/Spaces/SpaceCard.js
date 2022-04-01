@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
 import PropTypes from 'prop-types';
 
 const SpaceCard = ({
@@ -11,7 +10,7 @@ const SpaceCard = ({
     className="space-card"
     cover={<img alt="Space" src={image} />}
     actions={[
-      <Link className="view-btn" key="link" to="/details">View Space</Link>,
+      <Button type="primary" key="link">View Space</Button>,
     ]}
   >
     <Card.Meta title={name} description={description} />
