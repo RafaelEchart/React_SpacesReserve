@@ -13,11 +13,8 @@ import HomePageNoSession from './components/HomePageNoSession';
 import HomePageWithSession from './components/HomePageWithSession';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
-<<<<<<< HEAD
 import Details from './components/Spaces/Details';
-=======
 import Spaces from './components/Spaces';
->>>>>>> dev
 
 function App() {
   const dispatch = useDispatch();
