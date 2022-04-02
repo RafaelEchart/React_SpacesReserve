@@ -16,6 +16,7 @@ import SignupPage from './components/SignupPage';
 import Spaces from './components/Spaces/index';
 import Details from './components/Spaces/Details';
 import NewReservationPage from './components/NewReservationPage';
+import MyReservationsPage from './components/MyReservationsPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ function App() {
 
                 <Route path="/space/:id" element={<Details />} />
                 <Route path="/space/:id/reservation" element={<NewReservationPage />} />
+                <Route path="/myreservations" element={<MyReservationsPage />} />
 
               </>
             )

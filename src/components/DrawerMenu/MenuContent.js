@@ -39,7 +39,7 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
           ? (
             <ul className="ul_menu_container">
               <NavLink to="/" className="menu-options" onClick={closeMenu}>Spaces</NavLink>
-              <NavLink to="/space/1/reservation" className="menu-options" onClick={closeMenu}>Reservations</NavLink>
+              <NavLink to="/myreservations" className="menu-options" onClick={closeMenu}>My Reservations</NavLink>
               {userAdmin
                 ? (
                   <>
