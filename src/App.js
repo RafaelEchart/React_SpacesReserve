@@ -15,6 +15,7 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import Spaces from './components/Spaces/index';
 import Details from './components/Spaces/Details';
+import NewReservationPage from './components/NewReservationPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,18 +35,33 @@ function App() {
       <Routes>
         <>
           <Route path="/" element={userInformation ? <HomePageWithSession /> : <HomePageNoSession />} />
-          {admin
+          {userInformation
+
             ? (
               <>
-                <Route path="/new_space" element={<SpaceForm />} />
-                <Route path="/spaces" element={<Spaces />} />
+                {admin
+                  ? (
+                    <>
+                      <Route path="/new_space" element={<SpaceForm />} />
+                      <Route path="/spaces" element={<Spaces />} />
+                    </>
+                  )
+                  : null}
+
                 <Route path="/space/:id" element={<Details />} />
+                <Route path="/space/:id/reservation" element={<NewReservationPage />} />
+
               </>
             )
-            : null}
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/*" element={<Navigate to="/" />} />
+
+            : (
+              <>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/*" element={<Navigate to="/" />} />
+              </>
+            )}
+
         </>
       </Routes>
     </div>
