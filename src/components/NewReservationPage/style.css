@@ -219,12 +219,32 @@
   border-color: #b69de6;
 }
 
+.mobileImage_container { 
+ width: 100%;
+ display: none;
+}
+
+.datePicker {
+  width: 82%;
+}
+
+.datePicker_Container {
+  width: 100%;
+  text-align: right;
+}
+
+@media only screen and (max-width: 560px) {
+  .mobileImage_container { 
+    display: block;
+  }
+}
+
 @media only screen and (min-width: 560px) {
   .left {
     display: block;
   }
   .image-data {
-    display: block;
+    display: block !important;
   }
 
   .login_button {

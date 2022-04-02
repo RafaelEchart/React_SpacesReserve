@@ -88,6 +88,9 @@ const NewReservationForm = () => {
             </span>
           </div>
           <div action="" className="log-in" autoComplete="off">
+            <div className="mobileImage_container">
+              <img src={selectedSpaceInfo.image} alt="mobileImage" className="mobileImage" width="200" />
+            </div>
             <h4 className="login_title">
               Reserve in:
               <span className="login_span">
@@ -96,16 +99,18 @@ const NewReservationForm = () => {
             </h4>
             <p className="login_p">{selectedSpaceInfo.description}</p>
             <div className="floating-label">
-              <input placeholder="City" className="login_input" type="text" name="city" onChange={(e) => formCityHandler(e)} id="city" autoComplete />
+              <input placeholder="City" className="login_input" type="text" name="city" onChange={(e) => formCityHandler(e)} id="city" />
               <div className="icon">
                 <ion-icon name="mail-outline" class="email_icon" />
 
               </div>
             </div>
             <div className="floating-label">
-              <DatePicker onChange={(date, dateString) => formDateHandler(date, dateString)} />
+              <div className="datePicker_Container">
+                <DatePicker className="datePicker" onChange={(date, dateString) => formDateHandler(date, dateString)} />
+              </div>
               <div className="icon">
-                <ion-icon name="key-outline" class="email_icon" />
+                <ion-icon name="calendar-outline" class="email_icon" />
               </div>
 
             </div>
