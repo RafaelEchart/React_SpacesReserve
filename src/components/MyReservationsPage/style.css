@@ -1,14 +1,19 @@
-.login_container {
-  height: 100vh;
-  width: 100vw;
+.myreservation_container{
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: #dbdbdb;
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  margin: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.table_container {
+  height: 400px;
+  overflow: overlay;
+}
+
+.table_container::-webkit-scrollbar {
+  display: none;
+}
+
 
 .login_title {
   font-size: 24px;

@@ -100,8 +100,11 @@ const ReservationsInfo = () => {
       {selectedSpaceInfo.length
         ? (
           <>
-            <div>
-              <Table columns={columns} dataSource={selectedSpaceInfo} />
+            <div className="myreservation_container">
+              <div className="table_container">
+
+                <Table columns={columns} dataSource={selectedSpaceInfo} pagination={false} />
+              </div>
             </div>
           </>
         )
