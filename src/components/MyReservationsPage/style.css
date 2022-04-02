@@ -265,3 +265,121 @@
     width: auto;
   }
 }
+
+
+/* Header Styles */
+
+.profile-container {
+  width: 100%;
+  position: relative;
+  max-width: 1350px;
+  box-shadow: 0 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 23px 60px;
+  border-radius: 0 0 25px 25px;
+  height: 160px;
+  transition: all 0.3s;
+  background-image: linear-gradient(170deg, #c04848 0%, #480048 74%);
+  margin: auto;
+}
+
+.profile_span_container {
+  height: fit-content;
+    margin-top: 10px;
+}
+
+.profile_items {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+}
+
+.profile_img {
+  flex-shrink: 0;
+  height: 100px;
+  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+  box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-left: 40px;
+}
+
+.profile_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.profile_content {
+  padding: 0 25px 0 25px;
+  padding-right: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_joined {
+  color: tan;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+}
+
+.profile_username {
+  font-size: 24px;
+  font-weight: 700;
+  color: cornsilk;
+  margin-bottom: 12px;
+  float: left;
+}
+
+
+.profile_right_info {
+  text-align: center;
+}
+
+.profile_user_counter {
+  font-size: 65px;
+  color: aliceblue;
+}
+
+@media screen and (max-width: 800px) {
+  .profile-container {
+   height: 250px;
+  }
+
+  .profile_items {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .profile_img {
+    transform: translateY(10%);
+    margin-left: 0;
+    z-index: 1;
+  }
+
+  .profile_content {
+    text-align: center;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .profile_username {
+    float: none;
+  }
+
+  .profile_user_counter {
+    font-size: 35px;
+    margin: 0;
+}
+}
+
+
+@media screen and (max-width: 576px) {
+  .profile_content {
+    padding: 0;
+  }
+}

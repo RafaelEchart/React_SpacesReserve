@@ -114,7 +114,7 @@ const NewReservationForm = () => {
               </div>
 
             </div>
-            <button type="submit" onClick={submitLogin} className="login_button">Log in</button>
+            <button type="submit" onClick={submitLogin} className="login_button">Reserve Now!</button>
           </div>
         </div>
         )}

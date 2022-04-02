@@ -57,7 +57,7 @@ const ReservationsInfo = () => {
     },
 
   ];
-  const fetchSpaces = async () => {
+  const fetchReservations = async () => {
     try {
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
 
@@ -70,6 +70,7 @@ const ReservationsInfo = () => {
       });
 
       const backendResponseData = await response.json();
+      console.log(backendResponseData);
 
       const tempData = [];
 
@@ -92,7 +93,7 @@ const ReservationsInfo = () => {
   };
 
   useEffect(() => {
-    fetchSpaces();
+    fetchReservations();
   }, []);
 
   return (
