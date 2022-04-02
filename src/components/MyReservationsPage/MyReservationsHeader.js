@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { useSelector } from 'react-redux';
 
 import './style.css';
 
-const MyReservationsHeader = () => {
+const MyReservationsHeader = ({ amountReservations }) => {
   const { userInformation } = useSelector((state) => state);
 
   return (
@@ -25,7 +27,7 @@ const MyReservationsHeader = () => {
                 <div className="profile_username">{userInformation.name}</div>
               </div>
               <div className="profile_right_info">
-                <h2 className="profile_user_counter" id="profile_user_counter">12</h2>
+                <h2 className="profile_user_counter" id="profile_user_counter">{amountReservations}</h2>
 
               </div>
             </div>
@@ -36,6 +38,10 @@ const MyReservationsHeader = () => {
       )}
     </>
   );
+};
+
+MyReservationsHeader.propTypes = {
+  amountReservations: PropTypes.number.isRequired,
 };
 
 export default MyReservationsHeader;

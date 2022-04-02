@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import {
   Avatar, Table,
 } from 'antd';
+import MyReservationsHeader from './MyReservationsHeader';
 
 import './style.css';
 
-const ReservationsInfo = () => {
-  const [selectedSpaceInfo, myReservationsInfo] = useState([]);
+const MyReservationsInfo = () => {
+  const [myReservationsInfo, setMyReservationsInfo] = useState([]);
 
   const columns = [
     {
@@ -85,7 +86,7 @@ const ReservationsInfo = () => {
         });
       });
 
-      myReservationsInfo(tempData);
+      setMyReservationsInfo(tempData);
       console.log(backendResponseData);
     } catch (err) {
       console.log(err);
@@ -98,13 +99,14 @@ const ReservationsInfo = () => {
 
   return (
     <>
-      {selectedSpaceInfo.length
+      <MyReservationsHeader amountReservations={myReservationsInfo.length} />
+      {myReservationsInfo.length
         ? (
           <>
             <div className="myreservation_container">
               <div className="table_container">
 
-                <Table columns={columns} dataSource={selectedSpaceInfo} pagination={false} />
+                <Table columns={columns} dataSource={myReservationsInfo} pagination={false} />
               </div>
             </div>
           </>
@@ -114,4 +116,4 @@ const ReservationsInfo = () => {
   );
 };
 
-export default ReservationsInfo;
+export default MyReservationsInfo;

@@ -1,11 +1,9 @@
 import React from 'react';
-import ReservationsInfo from './ReservationsInfo';
-import MyReservationsHeader from './MyReservationsHeader';
+import MyReservationsInfo from './MyReservationsInfo';
 
 const MyReservationsPage = () => (
   <>
-    <MyReservationsHeader />
-    <ReservationsInfo />
+    <MyReservationsInfo />
   </>
 );
 

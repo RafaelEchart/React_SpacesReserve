@@ -1,8 +1,10 @@
-/* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
 import { message } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
+  const navigate = useNavigate();
+
   const [spaceData, setSpaceData] = useState({
     name: '',
     description: '',
@@ -34,13 +36,6 @@ const Form = () => {
     }
   };
 
-  const resetInputs = () => {
-    const fields = document.querySelectorAll('.login_input');
-    fields.forEach((field) => {
-      field.value = '';
-    });
-  };
-
   const handleSubmisson = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
     try {
@@ -60,7 +55,7 @@ const Form = () => {
         }),
       });
       message.success('New space added successfully');
-      resetInputs();
+      navigate('/');
     } catch (error) {
       message.error(error);
     }

@@ -6,8 +6,18 @@
 }
 
 .table_container {
-  height: 400px;
+  height: 365px;
   overflow: overlay;
+  padding: 16px;
+  width: 600px;
+  height: 365px;
+  overflow: overlay;
+  padding: 16px;
+  width: 600px;
+  margin: 20px;
+  box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 75%);
+  -webkit-box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 75%);
+  -moz-box-shadow: -3px 1px 35px -3px rgba(0,0,0,0.75);
 }
 
 .table_container::-webkit-scrollbar {
@@ -375,6 +385,12 @@
     font-size: 35px;
     margin: 0;
 }
+
+.myreservation_container {
+  padding: 20px 0px;
+}
+
+
 }
 
 
