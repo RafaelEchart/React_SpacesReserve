@@ -15,9 +15,9 @@
   padding: 16px;
   width: 600px;
   margin: 20px;
-  box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 75%);
-  -webkit-box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 75%);
-  -moz-box-shadow: -3px 1px 35px -3px rgba(0,0,0,0.75);
+  box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 30%);
+  -webkit-box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 30%);
+  -moz-box-shadow: -3px 1px 35px -3px rgba(0,0,0,0.30);
 }
 
 .table_container::-webkit-scrollbar {
