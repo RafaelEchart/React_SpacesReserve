@@ -3,6 +3,7 @@ import {
   Avatar, Table,
 } from 'antd';
 import MyReservationsHeader from './MyReservationsHeader';
+import NoDataMessage from '../NoDataMessage';
 
 import './style.css';
 
@@ -111,7 +112,11 @@ const MyReservationsInfo = () => {
             </div>
           </>
         )
-        : <span>There is no data</span>}
+        : (
+          <div className="myreservation_nodata">
+            <NoDataMessage text="No Reservations found" />
+          </div>
+        )}
     </>
   );
 };
