@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { message } from 'antd';
 
-const Space = ({ space, key }) => {
+const Space = ({ space }) => {
   const resetButton = (btnId) => {
     const targetBtn = document.getElementById(btnId);
     targetBtn.disabled = true;
@@ -32,7 +32,7 @@ const Space = ({ space, key }) => {
   };
 
   return (
-    <div className="space-card" key={key}>
+    <div className="space-card" key={space.id}>
       <div className="space-main">
         <div className="space-imgae-container">
           <img src={space.image} alt="space" />
@@ -57,7 +57,6 @@ const Space = ({ space, key }) => {
 
 Space.propTypes = {
   space: PropTypes.element.isRequired,
-  key: PropTypes.element.isRequired,
 };
 
 export default Space;
