@@ -27,7 +27,8 @@ const NewReservationForm = () => {
       setselectedSpaceInfo(backendResponseData);
       setReservationData({ ...reservationData, space_id: id });
     } catch (err) {
-      console.log(err);
+      message.error('An error has ocurred, try again!');
+      navigate('/');
     }
   };
 

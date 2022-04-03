@@ -1,23 +1,19 @@
-.myreservation_container{
+.myreservation_container {
   display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .table_container {
   height: 365px;
-  overflow: overlay;
   padding: 16px;
   width: 600px;
-  height: 365px;
-  overflow: overlay;
-  padding: 16px;
-  width: 600px;
+  overflow: auto;
   margin: 20px;
   box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 30%);
   -webkit-box-shadow: -3px 1px 35px -3px rgb(0 0 0 / 30%);
-  -moz-box-shadow: -3px 1px 35px -3px rgba(0,0,0,0.30);
+  -moz-box-shadow: -3px 1px 35px -3px rgba(0, 0, 0, 0.3);
 }
 
 .table_container::-webkit-scrollbar {
@@ -39,26 +35,27 @@
   height: 160px;
   transition: all 0.3s;
   margin: auto;
-  background: linear-gradient(-45deg, #2C3E50, #2C3E50, #4CA1AF, #4CA1AF);
+  background: linear-gradient(-45deg, #2c3e50, #2c3e50, #4ca1af, #4ca1af);
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
 }
 
 @keyframes gradient {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
+
   50% {
-      background-position: 100% 50%;
+    background-position: 100% 50%;
   }
+
   100% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
 .profile_span_container {
-  height: fit-content;
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .profile_items {
@@ -71,7 +68,7 @@
   flex-shrink: 0;
   height: 100px;
   background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
-  box-shadow: 0px 5px 22px 2px rgb(164 217 211 / 80%);
+  box-shadow: 0 5px 22px 2px rgb(164 217 211 / 80%);
   border-radius: 100px;
   overflow: hidden;
   margin-left: 40px;
@@ -109,7 +106,6 @@
   float: left;
 }
 
-
 .profile_right_info {
   text-align: center;
 }
@@ -121,7 +117,7 @@
 
 @media screen and (max-width: 800px) {
   .profile-container {
-   height: 250px;
+    height: 250px;
   }
 
   .profile_items {
@@ -141,6 +137,7 @@
     display: flex;
     flex-direction: column;
   }
+
   .profile_username {
     float: none;
   }
@@ -148,22 +145,18 @@
   .profile_user_counter {
     font-size: 35px;
     margin: 0;
+  }
+
+  .myreservation_container {
+    padding: 20px 0;
+  }
 }
-
-.myreservation_container {
-  padding: 20px 0px;
-}
-
-
-}
-
 
 @media screen and (max-width: 576px) {
   .profile_content {
     padding: 0;
   }
 }
-
 
 .myreservation_nodata {
   height: 300px;

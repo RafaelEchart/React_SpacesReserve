@@ -23,7 +23,6 @@ export const userIsLogged = (token, userData) => async (dispatch) => {
   let formatDate = new Date(userData.created_at);
   formatDate = formatDate.toString().split(' ');
   formatDate = `${formatDate[2]}-${formatDate[1]}-${formatDate[3]}`;
-  console.log(formatDate);
 
   const data = {
     name: userData.name,

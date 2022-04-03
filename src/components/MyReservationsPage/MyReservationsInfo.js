@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Avatar, Table,
+  Avatar, Table, message,
 } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import MyReservationsHeader from './MyReservationsHeader';
 import NoDataMessage from '../NoDataMessage';
 
 import './style.css';
 
 const MyReservationsInfo = () => {
+  const navigate = useNavigate();
+
   const [myReservationsInfo, setMyReservationsInfo] = useState([]);
 
   const columns = [
     {
-      title: 'Space Image',
+      title: 'Space',
       dataIndex: 'spaceImage',
       key: 'spaceImage',
 
@@ -44,7 +47,7 @@ const MyReservationsInfo = () => {
       ),
     },
     {
-      title: 'Reservation City',
+      title: 'City',
       dataIndex: 'reservationCity',
       key: 'reservationCity',
       width: 70,
@@ -72,7 +75,6 @@ const MyReservationsInfo = () => {
       });
 
       const backendResponseData = await response.json();
-      console.log(backendResponseData);
 
       const tempData = [];
 
@@ -88,9 +90,9 @@ const MyReservationsInfo = () => {
       });
 
       setMyReservationsInfo(tempData);
-      console.log(backendResponseData);
     } catch (err) {
-      console.log(err);
+      message.error('An error has ocurred, try again!');
+      navigate('/');
     }
   };
 
