@@ -2,20 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Image } from 'antd';
 import {
-  CaretLeftOutlined, RightCircleOutlined, SettingOutlined,
+  CaretLeftOutlined,
+  RightCircleOutlined,
+  SettingOutlined,
 } from '@ant-design/icons';
 
 const Details = () => {
-  const { details } = useParams();
+  const { space_id } = useParams();
   const [space, setSpace] = useState([]);
 
   const getSpaces = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
-    const response = await fetch('http://localhost:3000/spaces', {
+    const response = await fetch(`http://localhost:3000/spaces/${space_id}`, {
       headers: { Authorization: token },
     });
     const data = await response.json();
-    setSpace(data.find((space) => space.id.toString() === details));
+    setSpace(data);
   };
 
   useEffect(() => {
@@ -50,7 +52,7 @@ const Details = () => {
               <span>{space.price}</span>
             </li>
           </ul>
-          <Link key="link1" to={`/spaces/${details}/reservation`}>
+          <Link key="link1" to={`/spaces/${space_id}/reservation`}>
             <div className="reserve-btn">
               <SettingOutlined />
               Reserve
