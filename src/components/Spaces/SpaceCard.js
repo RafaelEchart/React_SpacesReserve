@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import PropTypes from 'prop-types';
 
-const SpaceCard = ({
-  id, name, image, description, price,
-}) => (
+const SpaceCard = ({ id, name, image, description, price }) => (
   <Card
     hoverable
     className="space-card"
     cover={<img alt="Space" src={image} />}
     actions={[
-      <Link key="link" to={`space/${id}`}> View</Link>,
+      <Link key="link" to={`/spaces/${id}`}>
+        {' '}
+        View
+      </Link>,
     ]}
   >
     <Card.Meta title={name} description={description} />
