@@ -52,7 +52,7 @@ const Details = () => {
               <span>{space.price}</span>
             </li>
           </ul>
-          <Link key="link1" to={`/spaces/${details}/new_reservation`}>
+          <Link key="link1" to={`/spaces/${details}/reservation`}>
             <div className="reserve-btn">
               <SettingOutlined />
               Reserve
