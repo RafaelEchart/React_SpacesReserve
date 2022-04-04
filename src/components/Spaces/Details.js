@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Image } from 'antd';
 import {
-  CaretLeftOutlined,
-  RightCircleOutlined,
-  SettingOutlined,
+  CaretLeftOutlined, RightCircleOutlined, SettingOutlined,
 } from '@ant-design/icons';
 
 const Details = () => {
