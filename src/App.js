@@ -11,7 +11,6 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import Spaces from './components/Spaces/index';
 import Details from './components/Spaces/Details';
-import ReservationForm from './components/Spaces/ReservationForm';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,10 +37,6 @@ function App() {
               <Route path="/new_space" element={<SpaceForm />} />
               <Route path="/spaces" element={<Spaces />} />
               <Route path="/spaces/:details" element={<Details />} />
-              <Route
-                path="spaces/:details/new_reservation"
-                element={<ReservationForm />}
-              />
             </>
           ) : null}
           <Route path="/login" element={<LoginPage />} />
