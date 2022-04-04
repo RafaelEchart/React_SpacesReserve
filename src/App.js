@@ -38,7 +38,10 @@ function App() {
               <Route path="/new_space" element={<SpaceForm />} />
               <Route path="/spaces" element={<Spaces />} />
               <Route path="/spaces/:details" element={<Details />} />
-              <Route path="spaces/:details/new_reservation" element={<ReservationForm />} />
+              <Route
+                path="spaces/:details/new_reservation"
+                element={<ReservationForm />}
+              />
             </>
           ) : null}
           <Route path="/login" element={<LoginPage />} />
