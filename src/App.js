@@ -1,10 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import SpaceForm from './components/Spaces/form';
 import DrawerMenu from './components/DrawerMenu';
 import './assets/stylesheets/App.css';
@@ -29,10 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <DrawerMenu
-        logedIn={userInformation}
-        admin={admin}
-      />
+      <DrawerMenu logedIn={userInformation} admin={admin} />
       <Routes>
         <>
           <Route path="/" element={userInformation ? <HomePageWithSession /> : <HomePageNoSession />} />
@@ -49,8 +42,8 @@ function App() {
                   )
                   : null}
 
-                <Route path="/space/:id" element={<Details />} />
-                <Route path="/space/:id/reservation" element={<NewReservationPage />} />
+                <Route path="/spaces/:id" element={<Details />} />
+                <Route path="/spaces/:id/reservation" element={<NewReservationPage />} />
                 <Route path="/myreservations" element={<MyReservationsPage />} />
 
               </>

@@ -20,7 +20,9 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "consistent-return": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "object-curly-newline": "off",
+    "camelcase": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
