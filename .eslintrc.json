@@ -21,7 +21,8 @@
     "no-shadow": "off",
     "consistent-return": "off",
     "linebreak-style": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "camelcase": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
