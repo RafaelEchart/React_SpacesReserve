@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { message } from 'antd';
 import PropTypes from 'prop-types';
 import { logOut } from '../../redux/task';
@@ -9,7 +9,6 @@ import './style.css';
 
 const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
     const userData = JSON.parse(localStorage.getItem('userInformation'));
@@ -26,7 +25,7 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
       dispatch(logOut());
       message.success(backMessage);
       localStorage.removeItem('userInformation');
-      navigate('/login');
+      window.location.href = '/';
       closeMenu();
     } catch (err) {
       message.error(err);
@@ -40,7 +39,7 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
           ? (
             <ul className="ul_menu_container">
               <NavLink to="/" className="menu-options" onClick={closeMenu}>Spaces</NavLink>
-              <NavLink to="/reservations" className="menu-options" onClick={closeMenu}>Reservations</NavLink>
+              <NavLink to="/myreservations" className="menu-options" onClick={closeMenu}>My Reservations</NavLink>
               {userAdmin
                 ? (
                   <>
