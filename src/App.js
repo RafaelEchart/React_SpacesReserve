@@ -42,8 +42,8 @@ function App() {
                   )
                   : null}
 
-                <Route path="/space/:id" element={<Details />} />
-                <Route path="/space/:id/reservation" element={<NewReservationPage />} />
+                <Route path="/spaces/:id" element={<Details />} />
+                <Route path="/spaces/:id/reservation" element={<NewReservationPage />} />
                 <Route path="/myreservations" element={<MyReservationsPage />} />
 
               </>
