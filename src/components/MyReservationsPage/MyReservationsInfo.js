@@ -75,7 +75,6 @@ const MyReservationsInfo = () => {
       });
 
       const backendResponseData = await response.json();
-      console.log(backendResponseData);
       const tempData = [];
 
       backendResponseData.forEach((reservation) => {
