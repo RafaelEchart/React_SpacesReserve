@@ -66,7 +66,7 @@ const MyReservationsInfo = () => {
     try {
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
 
-      const response = await fetch('http://localhost:3000/reservations', {
+      const response = await fetch('https://api-spaces.herokuapp.com/reservations', {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const MyReservationsInfo = () => {
       });
 
       const backendResponseData = await response.json();
-
+      console.log(backendResponseData);
       const tempData = [];
 
       backendResponseData.forEach((reservation) => {

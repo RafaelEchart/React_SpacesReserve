@@ -13,7 +13,7 @@ const Details = () => {
 
   const getSpace = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
-    const response = await fetch(`http://localhost:3000/spaces/${id}`, {
+    const response = await fetch(`https://api-spaces.herokuapp.com/spaces/${id}`, {
       headers: { Authorization: token },
     });
     const data = await response.json();

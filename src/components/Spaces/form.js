@@ -39,7 +39,7 @@ const Form = () => {
   const handleSubmisson = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
     try {
-      fetch('http://localhost:3000/spaces', {
+      fetch('https://api-spaces.herokuapp.com/spaces', {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',

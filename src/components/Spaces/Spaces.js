@@ -10,7 +10,7 @@ const Spaces = () => {
   const [spaces, setSpaces] = useState([]);
   const fetchSpaces = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
-    const response = await axios.get('http://localhost:3000/spaces', { headers: { Authorization: token } });
+    const response = await axios.get('https://api-spaces.herokuapp.com/spaces', { headers: { Authorization: token } });
     setSpaces(response.data);
   };
 

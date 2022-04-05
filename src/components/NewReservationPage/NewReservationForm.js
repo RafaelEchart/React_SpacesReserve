@@ -15,7 +15,7 @@ const NewReservationForm = () => {
     try {
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
 
-      const response = await fetch(`http://localhost:3000/spaces/${id}`, {
+      const response = await fetch(`https://api-spaces.herokuapp.com/spaces/${id}`, {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const NewReservationForm = () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
     if (reservationData.date.length && reservationData.city.length && token) {
       try {
-        await fetch('http://localhost:3000/reservations', {
+        await fetch('https://api-spaces.herokuapp.com/reservations', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
