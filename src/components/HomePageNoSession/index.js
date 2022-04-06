@@ -6,7 +6,6 @@ import MainSlideShow from '../MainSlideShow';
 const HomePageNoSession = () => (
   <>
     <MainSlideShow />
-
   </>
 );
 
