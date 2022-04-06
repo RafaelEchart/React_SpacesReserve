@@ -112,7 +112,7 @@ const SignupForm = () => {
               </div>
 
             </div>
-            <button type="submit" onClick={submitLogin} className="login_button">Log in</button>
+            <button type="submit" onClick={submitLogin} className="login_button">Sign Up</button>
           </div>
           <div className="right" />
 
