@@ -147,3 +147,29 @@ li.details-row:nth-child(2n) {
   font-size: 3rem;
   background-color: #98bf0c;
 }
+
+.space_image {
+  display: flex;
+  width: 100%;
+}
+
+.space_image input {
+  width: 95%;
+}
+
+.space_image button {
+  cursor: pointer;
+  border: 0;
+    background-color: transparent;
+    font-size: 25px;
+    color: green;
+}
+
+.ant-modal-body {
+  padding: 17px !important;
+
+}
+
+.responsive {
+  margin: 2px 6px !important;
+}
