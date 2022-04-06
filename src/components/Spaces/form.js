@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { message, Modal, Button } from 'antd';
+import { CameraOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import ImagePicker from 'react-image-picker';
 import 'react-image-picker/dist/index.css';
-
-import { FileImageOutlined } from '@ant-design/icons';
+import noImage from '../../assets/images/no_image.png';
+import imageOne from '../../assets/images/MainPage_NoLogin/first_banner.png';
+import imageTwo from '../../assets/images/spaces/banner_two.png';
+import imageThree from '../../assets/images/spaces/banner_three.png';
+import imageFour from '../../assets/images/spaces/banner_four.png';
+import imageFive from '../../assets/images/spaces/banner_five.png';
+import imageSix from '../../assets/images/spaces/banner_six.png';
+import imageSeven from '../../assets/images/spaces/banner_seven.png';
+import imageEight from '../../assets/images/spaces/banner_eight.png';
+import imageNine from '../../assets/images/spaces/banner_nine.png';
 
 const Form = () => {
   const navigate = useNavigate();
@@ -19,16 +28,14 @@ const Form = () => {
     setModalState(false);
   };
 
-  const imageList = ['https://ctfassets.imgix.net/vh7r69kgcki3/2HM1ow9oXjHVnGUKO09dxS/8bdcc43b8643c35951e2c4194c04aa7a/Space_StandardOffice__Size_XL__Aspect_1x1.png?auto=format%20compress&fit=crop&q=50&w=1050&h=1050',
-    'https://ctfassets.imgix.net/vh7r69kgcki3/2HbLseNzmnFCH4vMJyLuVO/30eeab003f239aa46cdc07f030a17a49/Space_DedicatedDesk__Size_M__Aspect_1x1.png?auto=format%20compress&fit=crop&q=50&w=750&h=750',
-    'https://ctfassets.imgix.net/vh7r69kgcki3/2PLXjS5AcbmchOMy6QScMm/256a7b64daf50f0e72a51cca63027bed/Space_OfficeSuite__Size_M__Aspect_1x1.png?auto=format%20compress&fit=crop&q=50&w=750&h=750',
-    'https://ctfassets.imgix.net/vh7r69kgcki3/2PLXjS5AcbmchOMy6QScMm/256a7b64daf50f0e72a51cca63027bed/Space_OfficeSuite__Size_M__Aspect_1x1.png?auto=format%20compress&fit=crop&q=50&w=750&h=750'];
+  const imageList = [imageOne, imageTwo, imageThree, imageFour,
+    imageFive, imageSix, imageSeven, imageEight, imageNine];
 
   const [spaceData, setSpaceData] = useState({
     name: '',
     description: '',
     price: '',
-    image: '',
+    image: noImage,
   });
 
   const onPick = (image) => {
@@ -87,7 +94,7 @@ const Form = () => {
   return (
     <>
       <div className="login_container">
-        <div className="session">
+        <div className="session new_spaces_width justify-content">
           <div action="" className="log-in add-space" autoComplete="off">
             <h4 className="login_title">
               Add new Space
@@ -114,18 +121,9 @@ const Form = () => {
             />
 
             <div className="space_image">
-              <input
-                placeholder="Image URL"
-                className="login_input space_input"
-                type="text"
-                name="spaceImage"
-                onChange={(e) => handleInput(e, 'image')}
-                value={spaceData.image}
-                id="spaceImage"
-                autoComplete="off"
-              />
+              <img width="75" height="75" src={spaceData.image} alt="Preview space" />
               <button type="button" onClick={showModal}>
-                <FileImageOutlined />
+                <CameraOutlined />
               </button>
             </div>
 
@@ -137,7 +135,7 @@ const Form = () => {
               id="description"
               autoComplete="off"
             />
-            <button type="submit" onClick={handleSubmisson} className="login_button">Add Space</button>
+            <button type="submit" onClick={handleSubmisson} className="login_button login_button_new">Add Space</button>
           </div>
         </div>
       </div>

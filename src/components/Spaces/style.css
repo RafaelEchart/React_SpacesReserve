@@ -151,6 +151,7 @@ li.details-row:nth-child(2n) {
 .space_image {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 
 .space_image input {
@@ -160,16 +161,68 @@ li.details-row:nth-child(2n) {
 .space_image button {
   cursor: pointer;
   border: 0;
-    background-color: transparent;
-    font-size: 25px;
-    color: green;
+  background-color: transparent;
+  font-size: 25px;
+  color: green;
 }
 
 .ant-modal-body {
   padding: 17px !important;
+  height: 330px;
+  overflow: auto !important;
+}
 
+.ant-modal-body::-webkit-scrollbar {
+  display: none;
 }
 
 .responsive {
   margin: 2px 6px !important;
+}
+
+.spaces-title {
+  font-size: 40px !important;
+  font-family: 'Montreal-font', sans-serif;
+  color: black;
+  font-weight: bolder;
+}
+
+.ant-card-meta-title {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bolder !important;
+  font-size: 20px !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ant-card-meta-detail {
+  font-family: 'Montreal-font', sans-serif;
+}
+
+.rec-pagination {
+  display: none !important;
+}
+
+.ant-card-actions li span a {
+  border: 0 !important;
+  background-color: transparent !important;
+  color: #fff;
+  margin-left: 40% !important;
+}
+
+.ant-card-actions li span {
+  width: 60%;
+}
+
+.new_spaces_width {
+  width: 310px !important;
+}
+
+.add_space {
+  padding: 25px 20px;
+}
+
+.justify-content {
+  justify-content: center !important;
 }

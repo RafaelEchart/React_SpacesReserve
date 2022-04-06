@@ -78,3 +78,9 @@
 .slick-list {
   height: 100vh !important;
 }
+
+@media only screen and (max-width: 400px) {
+  .hamburger-menu {
+    background: linear-gradient(to bottom, black, black 20%, transparent 20%, transparent 40%, black 40%, black 60%, transparent 60%, transparent 80%, black 80%, black 100%);
+  }
+}

@@ -20,7 +20,10 @@ const Spaces = () => {
 
   return (
     <div>
-      <h1 className="spaces-title">Spaces</h1>
+      <div className="container_spaces_title">
+        <h1 className="spaces-title">SPACES</h1>
+        <span>Please select a Space Option</span>
+      </div>
       <div style={{ margin: '0 50px' }}>
         {spaces.length === 0
           ? (
@@ -41,10 +44,11 @@ const Spaces = () => {
                   <SpaceCard
                     key={space.id}
                     id={space.id}
-                    name={space.name}
+                    name={space.name.toUpperCase()}
                     description={space.description}
                     price={space.price}
                     image={space.image}
+                    hoverable={false}
                   />
                 );
               })}

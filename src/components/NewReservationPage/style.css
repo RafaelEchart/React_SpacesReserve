@@ -199,7 +199,8 @@
 }
 
 .add-space {
-  width: 90%;
+  padding: 20px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -207,7 +208,7 @@
 }
 
 .sp_textarea {
-  height: 200px;
+  height: 100px;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
   padding: 10px;
@@ -251,7 +252,7 @@
   }
 
   .add-space {
-    width: 800px;
+    width: 360px;
   }
 
   .space_input {
