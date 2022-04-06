@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Drawer } from 'antd';
 import PropTypes from 'prop-types';
 import MenuContent from './MenuContent';
@@ -6,7 +8,20 @@ import TitleLogo from '../../assets/images/title-logo.png';
 import './style.css';
 
 const DrawerMenu = ({ logedIn, admin }) => {
+  const { userInformation } = useSelector((state) => state);
   const [visible, setVisible] = useState(false);
+
+  const path = useLocation();
+  let pathChecker = false;
+  if (path.pathname === '/' || path.pathname === '/spaces') {
+    if (userInformation) {
+      pathChecker = true;
+    }
+  }
+  console.log('path!');
+  console.log(path);
+  console.log(pathChecker);
+  console.log('----------');
 
   const openMenu = () => {
     setVisible(true);
@@ -18,7 +33,7 @@ const DrawerMenu = ({ logedIn, admin }) => {
 
   return (
     <>
-      <button type="button" onClick={openMenu} id="hamburger-menu" className="hamburger-menu">
+      <button type="button" onClick={openMenu} id="hamburger-menu" className={pathChecker ? 'hamburger-menu-black' : 'hamburger-menu-white'}>
         <>
         </ >
       </button>
