@@ -88,8 +88,7 @@ const SignupForm = () => {
             <div className="floating-label">
               <input placeholder="Name" className="signup_input" type="text" name="name" onChange={(e) => formDataHandler(e, 'name')} id="name" autoComplete="off" />
               <div className="icon new_heigh_icon">
-                <ion-icon name="mail-outline" class="email_icon" />
-
+                <ion-icon name="person-outline" />
               </div>
             </div>
             <div className="floating-label">
