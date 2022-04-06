@@ -258,3 +258,10 @@ li.details-row:nth-child(2n) {
 
 
 }
+
+.center_spinner {
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

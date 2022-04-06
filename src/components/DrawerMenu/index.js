@@ -18,10 +18,6 @@ const DrawerMenu = ({ logedIn, admin }) => {
       pathChecker = true;
     }
   }
-  console.log('path!');
-  console.log(path);
-  console.log(pathChecker);
-  console.log('----------');
 
   const openMenu = () => {
     setVisible(true);
