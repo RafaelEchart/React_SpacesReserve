@@ -7,6 +7,7 @@ import SpaceCard from './SpaceCard';
 import '../../assets/stylesheets/spaces.css';
 
 const Spaces = () => {
+  const [slideShowToShow, setSlideShowToShow] = useState(3);
   const [spaces, setSpaces] = useState([]);
   const fetchSpaces = async () => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
@@ -14,7 +15,24 @@ const Spaces = () => {
     setSpaces(response.data);
   };
 
+  const updateDimensions = () => {
+    console.log(window.innerWidth);
+
+    if (window.innerWidth > 1120) {
+      setSlideShowToShow(3);
+    }
+
+    if (window.innerWidth < 1120 && window.innerWidth > 795) {
+      setSlideShowToShow(2);
+    }
+
+    if (window.innerWidth < 795) {
+      setSlideShowToShow(1);
+    }
+  };
+
   useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
     fetchSpaces();
   }, []);
 
@@ -24,7 +42,7 @@ const Spaces = () => {
         <h1 className="spaces-title">SPACES</h1>
         <span>Please select a Space Option</span>
       </div>
-      <div style={{ margin: '0 50px' }}>
+      <div className="container_spaces_width_ok">
         {spaces.length === 0
           ? (
             <div>
@@ -35,7 +53,7 @@ const Spaces = () => {
             </div>
           )
           : (
-            <Carousel itemsToShow={3} itemPadding={[5]}>
+            <Carousel itemsToShow={slideShowToShow} itemPadding={[5]}>
               {spaces.map((space) => {
                 if (space.removed === true) {
                   return null;
