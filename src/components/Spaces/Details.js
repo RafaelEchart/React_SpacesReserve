@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Image, message } from 'antd';
+import { message } from 'antd';
 import {
   CaretLeftOutlined,
   RightCircleOutlined,
-  SettingOutlined,
 } from '@ant-design/icons';
 import SpinLoading from '../Spinner';
 
@@ -40,38 +39,39 @@ const Details = () => {
           <section className="details-page">
             <div className="details-section">
               <div>
-                <Image width={600} height={600} src={space.image} alt="Space Image" />
+                <img width={600} height={600} src={space.image} className="details_image" alt="Space Details" />
               </div>
               <div className="space-details">
                 <div className="space-main-details">
                   <p className="space-name">{space.name}</p>
                   <p className="space-desc">{space.description}</p>
                 </div>
-                <ul className="details">
-                  <li className="details-row">
-                    <span>Price</span>
-                    <span>{space.price}</span>
-                  </li>
-                  <li className="details-row">
-                    <span>Purchase</span>
-                    <span>{space.price}</span>
-                  </li>
-                  <li className="details-row">
-                    <span>Total</span>
-                    <span>{space.price}</span>
-                  </li>
-                  <li className="details-row">
-                    <span>Duration</span>
-                    <span>{space.price}</span>
-                  </li>
-                </ul>
-                <Link key="link1" to={`/spaces/${id}/reservation`}>
-                  <div className="reserve-btn">
-                    <SettingOutlined />
-                    Reserve
-                    <RightCircleOutlined />
-                  </div>
-                </Link>
+                <div>
+
+                  <ul className="details">
+                    <li className="details-row span_space_details">
+                      <span>Price</span>
+                      <span>
+                        $
+                        {space.price}
+                      </span>
+                    </li>
+                    <li className="details-row">
+                      <span>Created:</span>
+                      <span>{space.created_at.split('T')[0]}</span>
+                    </li>
+                    <li className="details-row span_space_details">
+                      <span>ID:</span>
+                      <span>{space.id}</span>
+                    </li>
+                  </ul>
+                  <Link key="link1" to={`/spaces/${id}/reservation`}>
+                    <div className="reserve-btn">
+                      <span>Reserve</span>
+                      <RightCircleOutlined />
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="back-btn">

@@ -5,6 +5,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import MyReservationsHeader from './MyReservationsHeader';
 import NoDataMessage from '../NoDataMessage';
+import SpinLoading from '../Spinner';
 
 import './style.css';
 
@@ -12,6 +13,7 @@ const MyReservationsInfo = () => {
   const navigate = useNavigate();
 
   const [myReservationsInfo, setMyReservationsInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const columns = [
     {
@@ -64,6 +66,7 @@ const MyReservationsInfo = () => {
   ];
   const fetchReservations = async () => {
     try {
+      setIsLoading(true);
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
 
       const response = await fetch('http://localhost:3000/reservations', {
@@ -90,6 +93,7 @@ const MyReservationsInfo = () => {
       });
 
       setMyReservationsInfo(tempData);
+      setIsLoading(false);
     } catch (err) {
       message.error('An error has ocurred, try again!');
       navigate('/');
@@ -102,23 +106,34 @@ const MyReservationsInfo = () => {
 
   return (
     <>
-      <MyReservationsHeader amountReservations={myReservationsInfo.length} />
-      {myReservationsInfo.length
-        ? (
-          <>
-            <div className="myreservation_container">
-              <div className="table_container">
+      {isLoading
+      && (
+      <>
+        <div className="center_spinner"><SpinLoading /></div>
+      </>
+      )}
 
-                <Table columns={columns} dataSource={myReservationsInfo} pagination={false} />
+      {!isLoading && (
+      <>
+        <MyReservationsHeader amountReservations={myReservationsInfo.length} />
+        {myReservationsInfo.length
+          ? (
+            <>
+              <div className="myreservation_container">
+                <div className="table_container">
+
+                  <Table columns={columns} dataSource={myReservationsInfo} pagination={false} />
+                </div>
               </div>
+            </>
+          )
+          : (
+            <div className="myreservation_nodata">
+              <NoDataMessage text="No Reservations found" />
             </div>
-          </>
-        )
-        : (
-          <div className="myreservation_nodata">
-            <NoDataMessage text="No Reservations found" />
-          </div>
-        )}
+          )}
+      </>
+      )}
     </>
   );
 };

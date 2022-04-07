@@ -14,11 +14,13 @@ import imageSix from '../../assets/images/spaces/banner_six.png';
 import imageSeven from '../../assets/images/spaces/banner_seven.png';
 import imageEight from '../../assets/images/spaces/banner_eight.png';
 import imageNine from '../../assets/images/spaces/banner_nine.png';
+import SpinLoading from '../Spinner';
 
 const Form = () => {
   const navigate = useNavigate();
 
   const [modalState, setModalState] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const showModal = () => {
     setModalState(true);
@@ -71,6 +73,7 @@ const Form = () => {
       && spaceData.price > 0
       && spaceData.image.length
       && spaceData.name.length) {
+      setIsLoading(true);
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
       try {
         fetch('http://localhost:3000/spaces', {
@@ -89,8 +92,10 @@ const Form = () => {
           }),
         });
         message.success('New space added successfully');
+        setIsLoading(false);
         navigate('/');
       } catch (error) {
+        setIsLoading(false);
         message.error(error);
       }
     } else {
@@ -99,6 +104,10 @@ const Form = () => {
   };
 
   return (
+    <>
+      {isLoading && <div className="center_spinner"><SpinLoading /></div>}
+      {!isLoading
+    && (
     <>
       <div className="login_container">
         <div className="session new_spaces_width justify-content">
@@ -159,6 +168,8 @@ const Form = () => {
         />
       </Modal>
 
+    </>
+    )}
     </>
   );
 };

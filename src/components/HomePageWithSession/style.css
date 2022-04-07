@@ -55,10 +55,16 @@
 
 .ant-card-meta-title {
   overflow: hidden;
+  
+.ant-card-body {
+  padding: 0 !important;
+}
+
+.ant-card-meta-title {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
   white-space: nowrap;
-  font-size: 40px;
   font-family: 'Montreal-font', sans-serif;
-  color: black;
   font-weight: bolder;
 }
 
