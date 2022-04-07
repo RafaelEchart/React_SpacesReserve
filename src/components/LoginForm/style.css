@@ -174,7 +174,7 @@
 }
 
 .sp_textarea {
-  height: 200px;
+  height: 120px;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
   padding: 10px;
@@ -194,7 +194,7 @@
   }
 
   .add-space {
-    width: 800px;
+    width: 360px;
   }
 
   .space_input {

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { userIsLogged } from '../../redux/task';
+import SpinLoading from '../Spinner';
 
 import './style.css';
 
@@ -11,6 +12,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({ email: '', password: '' });
+  const [isLoading, setIsLoading] = useState(false);
 
   const formDataHandler = (e, field) => {
     const input = e.target.value;
@@ -31,6 +33,7 @@ const LoginForm = () => {
   const submitLogin = async () => {
     if (loginData.email.length && loginData.password.length) {
       try {
+        setIsLoading(true);
         const backendResponse = await fetch('https://api-spaces.herokuapp.com/login', {
           method: 'post',
           headers: {
@@ -43,14 +46,18 @@ const LoginForm = () => {
             },
           }),
         });
+        if (!backendResponse.ok) {
+          throw new Error('Wrong crendentials, try again!');
+        }
         const backendResponseData = await backendResponse.json();
-
         const token = backendResponse.headers.get('Authorization');
         dispatch(userIsLogged(token, backendResponseData.data));
         message.success(`Welcome back, ${backendResponseData.data.name}!`);
+        setIsLoading(false);
         navigate('/');
       } catch (err) {
-        message.error(err);
+        setIsLoading(false);
+        message.error(err.toString());
       }
     } else {
       message.warning('The inputs cannot we blank!');
@@ -58,6 +65,10 @@ const LoginForm = () => {
   };
 
   return (
+    <>
+      {isLoading && <div className="center_spinner"><SpinLoading /></div>}
+      {!isLoading
+    && (
     <>
       <div className="login_container">
         <div className="session">
@@ -86,6 +97,8 @@ const LoginForm = () => {
           </div>
         </div>
       </div>
+    </>
+    )}
     </>
   );
 };
