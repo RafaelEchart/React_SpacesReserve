@@ -6,7 +6,20 @@
   padding: 30px 0 0 0 !important;
 }
 
-.hamburger-menu {
+.hamburger-menu-black {
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 20px;
+  background: linear-gradient(to bottom, black, black 20%, transparent 20%, transparent 40%, black 40%, black 60%, transparent 60%, transparent 80%, black 80%, black 100%);
+  position: fixed;
+  z-index: 1;
+}
+
+.hamburger-menu-white {
   cursor: pointer;
   width: 25px;
   height: 20px;
@@ -77,4 +90,10 @@
 
 .slick-list {
   height: 100vh !important;
+}
+
+@media only screen and (max-width: 400px) {
+  .hamburger-menu-white {
+    background: linear-gradient(to bottom, black, black 20%, transparent 20%, transparent 40%, black 40%, black 60%, transparent 60%, transparent 80%, black 80%, black 100%);
+  }
 }

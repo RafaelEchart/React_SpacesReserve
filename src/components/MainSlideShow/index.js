@@ -8,7 +8,7 @@ import '../../assets/stylesheets/button-29.css';
 
 const MainSlideShow = () => (
   <>
-    <Carousel dotPosition="right" draggable>
+    <Carousel dotPosition="right" draggable vertical="true">
       <FirstBannerMainPage />
       <SecondBannerMainPage />
       <ThirdBannerMainPage />

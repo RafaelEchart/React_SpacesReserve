@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'antd';
+import './buttonDesign.css';
 import PropTypes from 'prop-types';
 
 const SpaceCard = ({ id, name, image, description, price }) => (
@@ -10,15 +11,18 @@ const SpaceCard = ({ id, name, image, description, price }) => (
     cover={<img alt="Space" src={image} />}
     actions={[
       <Link key="link" to={`/spaces/${id}`}>
-        {' '}
-        View
+        <button type="button" className="custom-btn btn-12">
+          <span>
+            $
+            {price}
+          </span>
+          <span>Reserve Now!</span>
+        </button>
       </Link>,
     ]}
   >
     <Card.Meta title={name} description={description} />
-    <div className="space-card-price">
-      <span>{price}</span>
-    </div>
+
   </Card>
 );
 
