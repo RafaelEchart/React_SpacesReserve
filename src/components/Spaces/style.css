@@ -279,35 +279,37 @@ li.details-row:nth-child(2n) {
   .rec-item-wrapper {
     width: 320px;
   }
-}
 
-.space-main {
-  flex-direction: column;
-}
+  .spaces-container {
+    padding: 20px;
+  }
 
-.spaces-container {
-  padding: 20px;
-}
+  .management-title {
+    font-size: 35px !important;
+  }
 
-.management-title {
-  font-size: 35px !important;
-}
+  .space-imgae-container {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    overflow: hidden;
+  }
 
-.space-imgae-container {
-  max-width: 100%;
-  height: auto;
-  padding: 10px;
-  overflow: hidden;
-}
+  .space-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
 
-.space-main-info {
-  padding: 10px;
-}
+  .space-main-info {
+    padding: 10px;
+  }
 
-.space-details {
-display: flex;
-align-items: center;
-flex-direction: column;
+  .space-details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .center_spinner {
