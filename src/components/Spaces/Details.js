@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Image, message } from 'antd';
+import { message } from 'antd';
 import {
   CaretLeftOutlined,
   RightCircleOutlined,
@@ -40,7 +40,7 @@ const Details = () => {
           <section className="details-page">
             <div className="details-section">
               <div>
-                <Image width={600} height={600} src={space.image} alt="Space Image" />
+                <img width={600} height={600} src={space.image} alt="Space Details" />
               </div>
               <div className="space-details">
                 <div className="space-main-details">
