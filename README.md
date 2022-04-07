@@ -77,7 +77,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - This is app built withing the frames of CAPSTONE project of Final Capstone Module at **[Microverse](https://www.microverse.org/)**, a remote web-developer school, using their support and frameworks provided.<br>
-Original design idea by [Murat Korkmaz](https://www.behance.net/muratk)
+- Original design idea by [Murat Korkmaz](https://www.behance.net/muratk)
 
 ## 📝 License
 
