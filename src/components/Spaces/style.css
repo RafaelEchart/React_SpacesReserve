@@ -265,3 +265,8 @@ li.details-row:nth-child(2n) {
     justify-content: center;
     align-items: center;
 }
+
+.display_noSpaces {
+  display: flex;
+  flex-direction: column;
+}

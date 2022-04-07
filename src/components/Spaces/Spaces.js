@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Carousel from 'react-elastic-carousel';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button, message } from 'antd';
 import SpaceCard from './SpaceCard';
 import '../../assets/stylesheets/spaces.css';
 import SpinLoading from '../Spinner';
+import NoDataMessage from '../NoDataMessage';
 
 const Spaces = () => {
   const [slideShowToShow, setSlideShowToShow] = useState(3);
   const [spaces, setSpaces] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { userInformation } = useSelector((state) => state);
+  const admin = userInformation.role === 'admin';
+
   const fetchSpaces = async () => {
     try {
       setIsLoading(true);
@@ -46,6 +52,17 @@ const Spaces = () => {
 
   return (
     <>
+      {!isLoading && !spaces.length && (
+      <>
+
+        <div className="center_spinner display_noSpaces">
+          <NoDataMessage text="Oops! Looks like there is no Spaces available" />
+          <br />
+          {admin && <Link to="/new_space"><Button type="primary">Add new Space</Button></Link>}
+        </div>
+
+      </>
+      )}
       {isLoading ? <div className="center_spinner"><SpinLoading /></div> : null}
       {spaces.length && !isLoading
         ? (
