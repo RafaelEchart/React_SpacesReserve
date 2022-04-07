@@ -22,7 +22,10 @@ const Spaces = () => {
       setIsLoading(true);
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
       const response = await axios.get('http://localhost:3000/spaces', { headers: { Authorization: token } });
+      response.data = response.data.filter((space) => space.removed === false);
+
       setSpaces(response.data);
+      console.log(response.data);
       setIsLoading(false);
     } catch (err) {
       message.error('Error fetching the data, try again!');
