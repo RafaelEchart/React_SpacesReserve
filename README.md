@@ -62,7 +62,7 @@ To setup the Spaces project in your local, in the repo page:
 - GitHub: [@zainsadaqat ](https://github.com/zainsadaqat)
 - Twitter: [@zain_sadaqat](https://twitter.com/zain_sadaqat)
 
- **Umidjon Ustabaev**
+👤 **Umidjon Ustabaev**
 
 - GitHub: [@Hope1226](https://github.com/Hope1226)
 - LinkedIn: [@Hope](https://www.linkedin.com/in/umidjon-ustabaev/)
