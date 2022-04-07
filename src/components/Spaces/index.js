@@ -18,7 +18,7 @@ const Spaces = () => {
 
   return (
     <div className="spaces">
-      <h2>Space managment</h2>
+      <h2 className="spaces-title management-title">Space managment</h2>
       <div className="spaces-container">
         {spaces.map((target) => (
           <Space space={target} key={target.id} />

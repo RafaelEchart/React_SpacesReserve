@@ -8,6 +8,8 @@ const Space = ({ space }) => {
     targetBtn.disabled = true;
   };
 
+  const formatDate = (date) => date.split('T')[0].split('-').reverse().join('-');
+
   const removeSpace = async (spaceId) => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
     try {
@@ -38,13 +40,14 @@ const Space = ({ space }) => {
         </div>
         <div className="space-info">
           <div className="space-main-info">
-            <h2>{space.name}</h2>
+            <h2 className="ant-card-meta-title mnt-card-meta-title">{space.name}</h2>
             <p>{space.description}</p>
           </div>
           <div className="space-footer">
             <small>
               Added:
-              {space.created_at}
+              {' '}
+              {formatDate(space.created_at)}
             </small>
             {space.removed ? <span className="archived">Archived</span> : <button id={space.id} type="button" className="remove-btns" onClick={() => removeSpace(space.id)}>Remove</button>}
           </div>

@@ -37,6 +37,7 @@
 
 .ant-card-hoverable {
   border: 0 !important;
+  padding: 0 !important;
   transform: none;
   box-shadow: none !important;
 }
