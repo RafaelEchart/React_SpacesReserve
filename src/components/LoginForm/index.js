@@ -43,6 +43,9 @@ const LoginForm = () => {
             },
           }),
         });
+        if (!backendResponse.ok) {
+          throw new Error('Wrong crendentials, try again!');
+        }
         const backendResponseData = await backendResponse.json();
 
         const token = backendResponse.headers.get('Authorization');
@@ -50,7 +53,7 @@ const LoginForm = () => {
         message.success(`Welcome back, ${backendResponseData.data.name}!`);
         navigate('/');
       } catch (err) {
-        message.error(err);
+        message.error(err.toString());
       }
     } else {
       message.warning('The inputs cannot we blank!');

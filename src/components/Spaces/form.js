@@ -35,7 +35,7 @@ const Form = () => {
     name: '',
     description: '',
     price: '',
-    image: noImage,
+    image: '',
   });
 
   const onPick = (image) => {
@@ -67,27 +67,34 @@ const Form = () => {
   };
 
   const handleSubmisson = async () => {
-    const { token } = JSON.parse(localStorage.getItem('userInformation'));
-    try {
-      fetch('http://localhost:3000/spaces', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: token,
-        },
-        body: JSON.stringify({
-          space: {
-            name: spaceData.name,
-            description: spaceData.description,
-            price: spaceData.price,
-            image: spaceData.image,
+    if (spaceData.description.length
+      && spaceData.price > 0
+      && spaceData.image.length
+      && spaceData.name.length) {
+      const { token } = JSON.parse(localStorage.getItem('userInformation'));
+      try {
+        fetch('http://localhost:3000/spaces', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: token,
           },
-        }),
-      });
-      message.success('New space added successfully');
-      navigate('/');
-    } catch (error) {
-      message.error(error);
+          body: JSON.stringify({
+            space: {
+              name: spaceData.name,
+              description: spaceData.description,
+              price: spaceData.price,
+              image: spaceData.image,
+            },
+          }),
+        });
+        message.success('New space added successfully');
+        navigate('/');
+      } catch (error) {
+        message.error(error);
+      }
+    } else {
+      message.error('Input cannot be empty!');
     }
   };
 
@@ -121,7 +128,7 @@ const Form = () => {
             />
 
             <div className="space_image">
-              <img width="75" height="75" src={spaceData.image} alt="Preview space" />
+              <img width="75" height="75" src={spaceData.image.length ? spaceData.image : noImage} alt="Preview space" />
               <button type="button" onClick={showModal}>
                 <CameraOutlined />
               </button>
