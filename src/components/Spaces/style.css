@@ -208,7 +208,7 @@ li.details-row:nth-child(2n) {
   border: 0 !important;
   background-color: transparent !important;
   color: #fff;
-  margin-left: 40% !important;
+  margin-left: 32% !important;
 }
 
 .ant-card-actions li span {
@@ -269,4 +269,10 @@ li.details-row:nth-child(2n) {
 .display_noSpaces {
   display: flex;
   flex-direction: column;
+}
+
+.ant-card {
+  display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
