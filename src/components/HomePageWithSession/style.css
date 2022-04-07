@@ -37,6 +37,9 @@
 
 .ant-card-hoverable {
   border: 0 !important;
+  padding: 0 !important;
+  transform: none;
+  box-shadow: none !important;
 }
 
 .ant-card-cover img {
@@ -50,20 +53,8 @@
   transform: scale(1.2);
 }
 
-.ant-card-hoverable {
-  transform: none;
-  box-shadow: none !important;
-}
-
-.ant-card-body {
-  padding: 0 !important;
-}
-
 .ant-card-meta-title {
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 500;
-  font-size: 16px;
   white-space: nowrap;
   font-size: 40px;
   font-family: 'Montreal-font', sans-serif;
