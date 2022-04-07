@@ -29,7 +29,7 @@ You need to have followings installed in your local machine:
 
 ### Setup
 
-To setup the Items Library project in your local, in the repo page: 
+To setup the Spaces project in your local, in the repo page: 
 - click on code (dropdown list) > Download as ZIP. 
 - or open terminal of path you want to install project and run this command:
 `git clone https://github.com/Hope1226/book-appointment-front-end`
