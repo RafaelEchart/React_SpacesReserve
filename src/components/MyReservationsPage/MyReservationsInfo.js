@@ -109,7 +109,7 @@ const MyReservationsInfo = () => {
       {isLoading
       && (
       <>
-        <SpinLoading />
+        <div className="center_spinner"><SpinLoading /></div>
       </>
       )}
 

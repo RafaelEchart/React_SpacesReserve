@@ -46,7 +46,7 @@ const Spaces = () => {
 
   return (
     <>
-      {isLoading ? <SpinLoading /> : null}
+      {isLoading ? <div className="center_spinner"><SpinLoading /></div> : null}
       {spaces.length && !isLoading
         ? (
           <div>

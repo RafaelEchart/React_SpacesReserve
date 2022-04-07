@@ -105,7 +105,7 @@ const Form = () => {
 
   return (
     <>
-      {isLoading && <SpinLoading />}
+      {isLoading && <div className="center_spinner"><SpinLoading /></div>}
       {!isLoading
     && (
     <>

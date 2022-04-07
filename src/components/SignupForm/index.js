@@ -3,12 +3,15 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { userIsLogged } from '../../redux/task';
+import SpinLoading from '../Spinner';
 import '../LoginForm/style.css';
 import './style.css';
 
 const SignupForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const [loginData, setLoginData] = useState({
     name: '',
@@ -47,6 +50,7 @@ const SignupForm = () => {
       && loginData.password.length
       && loginData.password_confirmation.length) {
       try {
+        setIsLoading(true);
         const backendResponse = await fetch('http://localhost:3000/signup', {
           method: 'post',
           headers: {
@@ -61,14 +65,20 @@ const SignupForm = () => {
             },
           }),
         });
+        if (!backendResponse.ok) {
+          throw new Error('Wrong data, check inputs, please try again');
+        }
+
         const backendResponseData = await backendResponse.json();
 
         const token = backendResponse.headers.get('Authorization');
         dispatch(userIsLogged(token, backendResponseData.data));
         message.success(`Welcome, ${backendResponseData.data.name}!`);
+        setIsLoading(false);
         navigate('/');
       } catch (err) {
-        message.error(err);
+        setIsLoading(false);
+        message.error(err.toString());
       }
     } else {
       message.warning('The inputs cannot we blank!');
@@ -76,6 +86,10 @@ const SignupForm = () => {
   };
 
   return (
+    <>
+      {isLoading && <div className="center_spinner"><SpinLoading /></div>}
+      {!isLoading
+    && (
     <>
       <div className="login_container">
         <div className="session">
@@ -118,6 +132,8 @@ const SignupForm = () => {
 
         </div>
       </div>
+    </>
+    )}
     </>
   );
 };
