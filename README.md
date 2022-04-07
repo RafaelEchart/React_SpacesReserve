@@ -41,6 +41,9 @@ To setup the Items Library project in your local, in the repo page:
 - To run tests for current app, please run below commands in your terminal:
 - `n/a`
 
+## Project Management
+- The workflow of this project is managed by [Final group capstone: Book an Appointment](https://github.com/users/Hope1226/projects/1).
+
 ## Author
 
 👤 **Rafael Echart**
