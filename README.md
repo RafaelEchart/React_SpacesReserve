@@ -9,7 +9,7 @@
 Spaces is satae single page application built with React.js. App uses tokem Authentication techniques to authorize the cliant side to access the respective recourses, Authorization is managed based on the user role. The main concept behind the project is to allow service provider to let its cliants make online reservation of the work spaces around the world.
 
 ## Live demo
-[www.spaces.com](#)
+[www.spaces.com](https://work-spaces.netlify.app/)
 
 ## Built With
 
