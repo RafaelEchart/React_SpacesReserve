@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import './buttonDesign.css';
 import PropTypes from 'prop-types';
+import ReserveButton from './ReserveButton';
 
 const SpaceCard = ({ id, name, image, description, price }) => (
   <Card
@@ -12,17 +13,13 @@ const SpaceCard = ({ id, name, image, description, price }) => (
     actions={[
       <Link key="link" to={`/spaces/${id}`}>
         <button type="button" className="custom-btn btn-12">
-          <span>
-            $
-            {price}
-          </span>
-          <span>Reserve Now!</span>
+          <span>${price}</span>
+          <ReserveButton btnText="Reserve Now" />
         </button>
       </Link>,
     ]}
   >
     <Card.Meta title={name} description={description} />
-
   </Card>
 );
 
