@@ -22,7 +22,9 @@
     "consistent-return": "off",
     "linebreak-style": "off",
     "object-curly-newline": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "comma-dangle": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
