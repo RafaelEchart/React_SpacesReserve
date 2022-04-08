@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { message } from 'antd';
-import { CaretLeftOutlined, RightCircleOutlined } from '@ant-design/icons';
+import { RightCircleOutlined } from '@ant-design/icons';
 import SpinLoading from '../Spinner';
 import DetailsImage from './DetailsImage';
+import BackButton from './BackButton';
 
 const Details = () => {
   const { id } = useParams();
@@ -81,12 +82,7 @@ const Details = () => {
             </div>
           </div>
           <div className="back-btn">
-            <Link key="link" to="/">
-              <CaretLeftOutlined
-                style={{ color: '#fff' }}
-                className="back-icon"
-              />
-            </Link>
+            <BackButton />
           </div>
         </section>
       ) : null}
