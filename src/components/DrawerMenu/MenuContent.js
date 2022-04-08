@@ -13,7 +13,7 @@ const MenuContent = ({ closeMenu, userLogedIn, userAdmin }) => {
   const handleLogout = async () => {
     const userData = JSON.parse(localStorage.getItem('userInformation'));
     try {
-      const backendResponse = await fetch('http://localhost:3000/logout', {
+      const backendResponse = await fetch('https://api-spaces.herokuapp.com/logout', {
         method: 'delete',
         headers: {
           Authorization: userData.token,

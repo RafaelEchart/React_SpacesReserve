@@ -13,7 +13,7 @@ const Space = ({ space }) => {
   const removeSpace = async (spaceId) => {
     const { token } = JSON.parse(localStorage.getItem('userInformation'));
     try {
-      fetch(`http://localhost:3000/spaces/${spaceId}`, {
+      fetch(`https://api-spaces.herokuapp.com/spaces/${spaceId}`, {
         method: 'put',
         headers: {
           'Content-Type': 'application/json',

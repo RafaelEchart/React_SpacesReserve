@@ -51,7 +51,7 @@ const SignupForm = () => {
       && loginData.password_confirmation.length) {
       try {
         setIsLoading(true);
-        const backendResponse = await fetch('http://localhost:3000/signup', {
+        const backendResponse = await fetch('https://api-spaces.herokuapp.com/signup', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',

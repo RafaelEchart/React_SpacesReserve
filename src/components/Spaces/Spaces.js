@@ -21,11 +21,10 @@ const Spaces = () => {
     try {
       setIsLoading(true);
       const { token } = JSON.parse(localStorage.getItem('userInformation'));
-      const response = await axios.get('http://localhost:3000/spaces', { headers: { Authorization: token } });
+      const response = await axios.get('https://api-spaces.herokuapp.com/spaces', { headers: { Authorization: token } });
       response.data = response.data.filter((space) => space.removed === false);
 
       setSpaces(response.data);
-      console.log(response.data);
       setIsLoading(false);
     } catch (err) {
       message.error('Error fetching the data, try again!');
@@ -33,8 +32,6 @@ const Spaces = () => {
   };
 
   const updateDimensions = () => {
-    console.log(window.innerWidth);
-
     if (window.innerWidth > 1120) {
       setSlideShowToShow(3);
     }
@@ -49,6 +46,7 @@ const Spaces = () => {
   };
 
   useEffect(() => {
+    updateDimensions();
     window.addEventListener('resize', updateDimensions);
     fetchSpaces();
   }, []);

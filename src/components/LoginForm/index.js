@@ -34,7 +34,7 @@ const LoginForm = () => {
     if (loginData.email.length && loginData.password.length) {
       try {
         setIsLoading(true);
-        const backendResponse = await fetch('http://localhost:3000/login', {
+        const backendResponse = await fetch('https://api-spaces.herokuapp.com/login', {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
